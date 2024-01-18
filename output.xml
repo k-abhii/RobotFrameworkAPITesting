@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.0 (Python 3.8.2 on win32)" generated="2024-01-18T12:05:31.266426" rpa="false" schemaversion="5">
+<suite id="s1" name="TC 001 Get Requests" source="C:\Users\hp\PycharmProjects\RobotAPIAutomation\TC_001_Get_Requests.robot">
+<test id="s1-t1" name="TC_001_Get_Requests" line="10">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-01-18T12:05:31.772424" level="INFO">${url} = Hello World</msg>
+<var>${url}</var>
+<arg>Hello World</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-01-18T12:05:31.771424" elapsed="0.001000"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${API_URL}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-01-18T12:05:31.773442" elapsed="0.000985"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${url}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-01-18T12:05:31.775446" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2024-01-18T12:05:31.769411" elapsed="0.007035"/>
+</test>
+<status status="PASS" start="2024-01-18T12:05:31.272413" elapsed="0.505995"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="TC 001 Get Requests">TC 001 Get Requests</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
