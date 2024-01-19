@@ -6,7 +6,7 @@ ${StudentID}    10058032
 *** Test Cases ***
 TC_001_Fetch_Specific_Students_Details_By_Id
     Create Session    Fetch_Data    ${APP_BASE_URL}
-    ${Response}=    Get Request    Fetch_Data    api/studentsDetails/${StudentID}
+    ${Response}=    GET On Session    Fetch_Data    api/studentsDetails/${StudentID}
     Log To Console    ${Response.status_code}
     Log To Console    ${Response.content}
     ${actual_code}=    Convert To String    ${Response.status_code}
