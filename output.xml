@@ -1,27 +1,53 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.0 (Python 3.8.2 on win32)" generated="2024-01-18T12:05:31.266426" rpa="false" schemaversion="5">
-<suite id="s1" name="TC 001 Get Requests" source="C:\Users\hp\PycharmProjects\RobotAPIAutomation\TC_001_Get_Requests.robot">
-<test id="s1-t1" name="TC_001_Get_Requests" line="10">
-<kw name="Set Variable" owner="BuiltIn">
-<msg time="2024-01-18T12:05:31.772424" level="INFO">${url} = Hello World</msg>
-<var>${url}</var>
-<arg>Hello World</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2024-01-18T12:05:31.771424" elapsed="0.001000"/>
+<robot generator="Robot 7.0 (Python 3.8.2 on win32)" generated="2024-01-19T08:24:02.008313" rpa="false" schemaversion="5">
+<suite id="s1" name="TC 001 Get Request" source="C:\Users\hp\PycharmProjects\RobotAPIAutomation\TC_001_Get_Request.robot">
+<test id="s1-t1" name="TC_001_GET_Request" line="9">
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2024-01-19T08:24:02.856960" level="INFO">Creating Session using : alias=GET_STUDENT_DETAILS, url=https://thetestingworldapi.com/, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<arg>GET_STUDENT_DETAILS</arg>
+<arg>${API_BASE_URL}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2024-01-19T08:24:02.855958" elapsed="0.001002"/>
+</kw>
+<kw name="Get Request" owner="RequestsLibrary">
+<msg time="2024-01-19T08:24:02.857957" level="WARN">Keyword 'RequestsLibrary.Get Request' is deprecated. Please use `GET On Session` instead.</msg>
+<msg time="2024-01-19T08:24:03.152940" level="INFO">GET Request : url=https://thetestingworldapi.com/api/studentsDetails 
+ path_url=/api/studentsDetails 
+ headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg time="2024-01-19T08:24:03.152940" level="INFO">GET Response : url=https://thetestingworldapi.com/api/studentsDetails 
+ status=200, reason=OK 
+ headers={'Cache-Control': 'no-cache', 'Pragma': 'no-cache', 'Content-Type': 'application/json; charset=utf-8', 'Expires': '-1', 'Server': 'Microsoft-IIS/10.0', 'X-AspNet-Version': '4.0.30319', 'X-Powered-By': 'ASP.NET', 'X-Powered-By-Plesk': 'PleskWin', 'Date': 'Fri, 19 Jan 2024 02:54:02 GMT', 'Content-Length': '10261'} 
+ body=[{"id":10058032,"first_name":"sanem","middle_name":"deneme3 ","last_name":"deneme4","date_of_birth":"11-12-2000"},{"id":10058031,"first_name":"sanem","middle_name":"deneme3 ","last_name":"deneme4","date_of_birth":"11-12-2000"},{"id":10058030,"first_name":"sanem","middle_name":"deneme3 ","last_name":"deneme4","date_of_birth":"11-12-2000"},{"id":10058029,"first_name":"sanem","middle_name":"deneme3 ","last_name":"deneme4","date_of_birth":"11-12-2000"},{"id":10058028,"first_name":"sanem","middle_name":"deneme3 ","last_name":"deneme4","date_of_birth":"11-12-2000"},{"id":10058027,"first_name":"sanem","middle_name":"deneme3 ","last_name":"deneme4","date_of_birth":"11-12-2000"},{"id":10058026,"first_name":"Balaram806","middle_name":"Reddy540","last_name":"salara97","date_of_birth":null},{"id":10058025,"first_name":"Balaram96","middle_name":"Reddy119","last_name":"salara962","date_of_birth":null},{"id":10058024,"first_name":"Furkan","middle_name":"A","last_name":"Simsek","date_of_birth":"07/02/1996"},{"id":10058023,"first_name":"sample string 2","middle_name":"sample string 3","last_name":"sample string 4","date_of_birth":"sample string 5"},{"id":10058021,"first_name":"F10","middle_name":"M10","last_name":"L10","date_of_birth":"28/04/1996"},{"id":10058020,"first_name":"F10","middle_name":"M10","last_name":"L10","date_of_birth":"28/04/1996"},{"id":10058019,"first_name":"F10","middle_name":"M10","last_name":"L10","date_of_birth":"28/04/1996"},{"id":10058018,"first_name":"F10","middle_name":"M10","last_name":"L10","date_of_birth":"28/04/1996"},{"id":10058017,"first_name":"F10","middle_name":"M10","last_name":"L10","date_of_birth":"28/04/1996"},{"id":10058016,"first_name":"S","middle_name":"M","last_name":"kumars","date_of_birth":"15/12/1996"},{"id":10058015,"first_name":"S","middle_name":"M","last_name":"kumars","date_of_birth":"15/12/1996"},{"id":10058014,"first_name":"S","middle_name":"M","last_name":"kumars","date_of_birth":"15/12/1996"},{"id":10058013,"first_name":"sanem","middle_name":"deneme1","last_name":"deneme2","date_of_birth":"11-12-2000"},{"id":10058012,"first_name":"S","middle_name":"M","last_name":"kumars","date_of_birth":"15/12/1996"},{"id":10058011,"first_name":"sanem","middle_name":"deneme1","last_name":"deneme2","date_of_birth":"11-12-2000"},{"id":10058010,"first_name":"S","middle_name":"M","last_name":"kumars","date_of_birth":"15/12/1996"},{"id":10058009,"first_name":"S","middle_name":"M","last_name":"kumars","date_of_birth":"15/12/1996"},{"id":10058008,"first_name":"S","middle_name":"M","last_name":"kumars","date_of_birth":"15/12/1996"},{"id":10058007,"first_name":"S","middle_name":"M","last_name":"kumars","date_of_birth":"15/12/1996"},{"id":10058006,"first_name":"S","middle_name":"M","last_name":"kumars","date_of_birth":"15/12/1996"},{"id":10058005,"first_name":"F10","middle_name":"M10","last_name":"L10","date_of_birth":"28/04/1996"},{"id":10058004,"first_name":"F10","middle_name":"M10","last_name":"L10","date_of_birth":"28/04/1996"},{"id":10058003,"first_name":"F10","middle_name":"M10","last_name":"L10","date_of_birth":"28/04/1996"},{"id":10058002,"first_name":"F10","middle_name":"M10","last_name":"L10","date_of_birth":"28/04/1996"},{"id":10058001,"first_name":"F10","middle_name":"M10","last_name":"L10","date_of_birth":"28/04/1996"},{"id":10058000,"first_name":"F10","middle_name":"M10","last_name":"L10","date_of_birth":"28/04/1996"},{"id":10057999,"first_name":"S","middle_name":"M","last_name":"kumars","date_of_birth":"15/12/1996"},{"id":10057998,"first_name":"S","middle_name":"M","last_name":"kumars","date_of_birth":"15/12/1996"},{"id":10057997,"first_name":"S","middle_name":"M","last_name":"kumars","date_of_birth":"15/12/1996"},{"id":10057996,"first_name":"S","middle_name":"M","last_name":"kumars","date_of_birth":"15/12/1996"},{"id":10057995,"first_name":"S","middle_name":"M","last_name":"kumars","date_of_birth":"15/12/1996"},{"id":10057994,"first_name":"S","middle_name":"M","last_name":"kumars","date_of_birth":"15/12/1996"},{"id":10057993,"first_name":"S","middle_name":"M","last_name":"kumars","date_of_birth":"15/12/1996"},{"id":10057992,"first_name":"S","middle_name":"M","last_name":"kumars","date_of_birth":"15/12/1996"},{"id":10057991,"first_name":"S","middle_name":"M","last_name":"kumars","date_of_birth":"15/12/1996"},{"id":10057990,"first_name":"S","middle_name":"M","last_name":"kumars","date_of_birth":"15/12/1996"},{"id":10057989,"first_name":"S","middle_name":"M","last_name":"kumars","date_of_birth":"15/12/1996"},{"id":10057988,"first_name":"F10","middle_name":"M10","last_name":"L10","date_of_birth":"28/04/1996"},{"id":10057987,"first_name":"F10","middle_name":"M10","last_name":"L10","date_of_birth":"28/04/1996"},{"id":10057986,"first_name":"F10","middle_name":"M10","last_name":"L10","date_of_birth":"28/04/1996"},{"id":10057985,"first_name":"F10","middle_name":"M10","last_name":"L10","date_of_birth":"28/04/1996"},{"id":10057984,"first_name":"F10","middle_name":"M10","last_name":"L10","date_of_birth":"28/04/1996"},{"id":10057983,"first_name":"F10","middle_name":"M10","last_name":"L10","date_of_birth":"28/04/1996"},{"id":10057982,"first_name":"S","middle_name":"M","last_name":"kumars","date_of_birth":"15/12/1996"},{"id":10057981,"first_name":"S","middle_name":"M","last_name":"kumars","date_of_birth":"15/12/1996"},{"id":10057980,"first_name":"S","middle_name":"M","last_name":"kumars","date_of_birth":"15/12/1996"},{"id":10057979,"first_name":"S","middle_name":"M","last_name":"kumars","date_of_birth":"15/12/1996"},{"id":10057978,"first_name":"S","middle_name":"M","last_name":"kumars","date_of_birth":"15/12/1996"},{"id":10057977,"first_name":"S","middle_name":"M","last_name":"kumars","date_of_birth":"15/12/1996"},{"id":10057976,"first_name":"S","middle_name":"M","last_name":"kumars","date_of_birth":"15/12/1996"},{"id":10057975,"first_name":"S","middle_name":"M","last_name":"kumars","date_of_birth":"15/12/1996"},{"id":10057974,"first_name":"S","middle_name":"M","last_name":"kumars","date_of_birth":"15/12/1996"},{"id":10057973,"first_name":"S","middle_name":"M","last_name":"kumars","date_of_birth":"15/12/1996"},{"id":10057972,"first_name":"S","middle_name":"M","last_name":"kumars","date_of_birth":"15/12/1996"},{"id":10057971,"first_name":"S","middle_name":"M","last_name":"kumars","date_of_birth":"15/12/1996"},{"id":10057970,"first_name":"Dario","middle_name":"Olivia","last_name":"Johnston","date_of_birth":"22/01/2024"},{"id":10057969,"first_name":"Columbus","middle_name":"9","last_name":"Homenick","date_of_birth":"25/01/2024"},{"id":10057968,"first_name":"Lessie","middle_name":"0","last_name":"Rau","date_of_birth":"23/01/2024"},{"id":10057967,"first_name":"Blanche","middle_name":"2","last_name":"Hayes","date_of_birth":"19/01/2024"},{"id":10057966,"first_name":"Torrance","middle_name":"9","last_name":"Gaylord","date_of_birth":"21/01/2024"},{"id":10057964,"first_name":"Alejandrin","middle_name":"Elizabeth","last_name":"Von","date_of_birth":"25/01/2024"},{"id":10057963,"first_name":"dzf","middle_name":"ccb","last_name":"c","date_of_birth":"3"},{"id":10057962,"first_name":"dzf","middle_name":"ccb","last_name":"c","date_of_birth":"3"},{"id":10057961,"first_name":"dzf","middle_name":"ccb","last_name":"c","date_of_birth":"3"},{"id":10057960,"first_name":"dzf","middle_name":"ccb","last_name":"c","date_of_birth":"3"},{"id":10057959,"first_name":"dzf","middle_name":"ccb","last_name":"c","date_of_birth":"3"},{"id":10057958,"first_name":"dzf","middle_name":"ccb","last_name":"c","date_of_birth":"3"},{"id":10057957,"first_name":"S","middle_name":"M","last_name":"kumars","date_of_birth":"15/12/1996"},{"id":10057956,"first_name":"S","middle_name":"M","last_name":"kumars","date_of_birth":"15/12/1996"},{"id":10057955,"first_name":"S","middle_name":"M","last_name":"kumars","date_of_birth":"15/12/1996"},{"id":10057954,"first_name":"Moises","middle_name":"Gamma","last_name":"Towne","date_of_birth":"2024/01/21"},{"id":10057953,"first_name":"S","middle_name":"d","last_name":"h","date_of_birth":"54646"},{"id":10057952,"first_name":"S","middle_name":"M","last_name":"kumars","date_of_birth":"15/12/1996"},{"id":10057951,"first_name":"dzf","middle_name":"ccb","last_name":"c","date_of_birth":"3"},{"id":10057950,"first_name":"S","middle_name":"M","last_name":"kumars","date_of_birth":"15/12/1996"},{"id":10057949,"first_name":"S","middle_name":"M","last_name":"kumars","date_of_birth":"15/12/1996"},{"id":10057948,"first_name":"","middle_name":"","last_name":"","date_of_birth":""},{"id":10057947,"first_name":"","middle_name":"","last_name":"","date_of_birth":""},{"id":10057946,"first_name":"","middle_name":"","last_name":"","date_of_birth":""},{"id":10057945,"first_name":"","middle_name":"","last_name":"","date_of_birth":""},{"id":10057944,"first_name":"","middle_name":"","last_name":"","date_of_birth":""},{"id":10057943,"first_name":"","middle_name":"","last_name":"","date_of_birth":""},{"id":10057942,"first_name":"S","middle_name":"M","last_name":"kumars","date_of_birth":"15/12/1996"},{"id":10057941,"first_name":"S","middle_name":"M","last_name":"kumars","date_of_birth":"15/12/1996"},{"id":10057940,"first_name":"Jedediah","middle_name":"Gamma","last_name":"Toy","date_of_birth":"2024/01/21"},{"id":10057939,"first_name":"Tatyana","middle_name":"Gamma","last_name":"Dooley","date_of_birth":"2024/01/20"},{"id":10057938,"first_name":"Burley","middle_name":"Beta","last_name":"Keebler","date_of_birth":"2024/01/27"},{"id":10057937,"first_name":"Ismael","middle_name":"Epsilon","last_name":"Mosciski","date_of_birth":"2024/01/28"},{"id":10057936,"first_name":"Lucie","middle_name":"Delta","last_name":"O'Connell","date_of_birth":"2024/01/25"},{"id":10057935,"first_name":"Eliseo","middle_name":"Beta","last_name":"Schaden","date_of_birth":"{{/DateOfBirth}}"},{"id":10057934,"first_name":"Elliot","middle_name":"Gamma","last_name":"MacGyver","date_of_birth":"/2024/01/26"},{"id":10057933,"first_name":"Keyon","middle_name":"Beta","last_name":"Hane","... (set the log level to DEBUG or TRACE to see the full content) 
+ </msg>
+<msg time="2024-01-19T08:24:03.154946" level="INFO">c:\python38\lib\site-packages\urllib3\connectionpool.py:1099: InsecureRequestWarning: Unverified HTTPS request is being made to host 'thetestingworldapi.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(</msg>
+<msg time="2024-01-19T08:24:03.155936" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<var>${response}</var>
+<arg>GET_STUDENT_DETAILS</arg>
+<arg>api/studentsDetails</arg>
+<doc>*DEPRECATED* Please use `GET On Session` instead.</doc>
+<status status="PASS" start="2024-01-19T08:24:02.857957" elapsed="0.297979"/>
 </kw>
 <kw name="Log To Console" owner="BuiltIn">
-<arg>${API_URL}</arg>
+<arg>${response}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2024-01-18T12:05:31.773442" elapsed="0.000985"/>
+<status status="PASS" start="2024-01-19T08:24:03.157924" elapsed="0.001015"/>
 </kw>
 <kw name="Log To Console" owner="BuiltIn">
-<arg>${url}</arg>
+<arg>${response.status_code}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2024-01-18T12:05:31.775446" elapsed="0.000000"/>
+<status status="PASS" start="2024-01-19T08:24:03.160907" elapsed="0.002995"/>
 </kw>
-<status status="PASS" start="2024-01-18T12:05:31.769411" elapsed="0.007035"/>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${response.content}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-01-19T08:24:03.164908" elapsed="0.002994"/>
+</kw>
+<status status="PASS" start="2024-01-19T08:24:02.852943" elapsed="0.315961"/>
 </test>
-<status status="PASS" start="2024-01-18T12:05:31.272413" elapsed="0.505995"/>
+<status status="PASS" start="2024-01-19T08:24:02.014316" elapsed="1.156592"/>
 </suite>
 <statistics>
 <total>
@@ -30,9 +56,10 @@
 <tag>
 </tag>
 <suite>
-<stat pass="1" fail="0" skip="0" id="s1" name="TC 001 Get Requests">TC 001 Get Requests</stat>
+<stat pass="1" fail="0" skip="0" id="s1" name="TC 001 Get Request">TC 001 Get Request</stat>
 </suite>
 </statistics>
 <errors>
+<msg time="2024-01-19T08:24:02.857957" level="WARN">Keyword 'RequestsLibrary.Get Request' is deprecated. Please use `GET On Session` instead.</msg>
 </errors>
 </robot>

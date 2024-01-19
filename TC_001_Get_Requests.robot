@@ -17,3 +17,24 @@ TC_001_Get_Requests
 *** Keywords ***
 
 
+
+#https://github.com/k-abhii/RobotFrameworkAPITesting.git
+
+#git remote add origin https://github.com/k-abhii/RobotFrameworkAPITesting.git
+#git branch -M main
+#git push -u origin main
+
+#$ robot TC_001_Get_Requests.robot
+#==============================================================================
+#TC 001 Get Requests
+#==============================================================================
+#TC_001_Get_Requests                                                   "https://thetestingworldapi.com"
+#Hello World
+#| PASS |
+#------------------------------------------------------------------------------
+#TC 001 Get Requests                                                   | PASS |
+#1 test, 1 passed, 0 failed
+#==============================================================================
+#Output:  C:\Users\hp\PycharmProjects\RobotAPIAutomation\output.xml
+#Log:     C:\Users\hp\PycharmProjects\RobotAPIAutomation\log.html
+#Report:  C:\Users\hp\PycharmProjects\RobotAPIAutomation\report.html
