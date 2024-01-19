@@ -1,60 +1,124 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.0 (Python 3.8.2 on win32)" generated="2024-01-19T09:17:07.345368" rpa="false" schemaversion="5">
+<robot generator="Robot 7.0 (Python 3.8.2 on win32)" generated="2024-01-19T10:00:15.495477" rpa="false" schemaversion="5">
 <suite id="s1" name="TC 001 Get Specific Students Details" source="C:\Users\hp\PycharmProjects\RobotAPIAutomation\TC_001_Get_Specific_Students_Details.robot">
-<test id="s1-t1" name="TC_001_Fetch_Specific_Students_Details_By_Id" line="7">
+<test id="s1-t1" name="TC_001_Fetch_Specific_Students_Details_By_Id" line="9">
 <kw name="Create Session" owner="RequestsLibrary">
-<msg time="2024-01-19T09:17:07.837389" level="INFO">Creating Session using : alias=Fetch_Data, url=https://thetestingworldapi.com/, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<msg time="2024-01-19T10:00:19.798256" level="INFO">Creating Session using : alias=Fetch_Data, url=https://thetestingworldapi.com/, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
 <arg>Fetch_Data</arg>
 <arg>${APP_BASE_URL}</arg>
 <doc>Create Session: create a HTTP session to a server</doc>
-<status status="PASS" start="2024-01-19T09:17:07.836380" elapsed="0.002007"/>
+<status status="PASS" start="2024-01-19T10:00:19.797257" elapsed="0.000999"/>
 </kw>
 <kw name="GET On Session" owner="RequestsLibrary">
-<msg time="2024-01-19T09:17:07.976009" level="INFO">GET Request : url=https://thetestingworldapi.com/api/studentsDetails/10058032 
+<msg time="2024-01-19T10:00:23.467597" level="INFO">GET Request : url=https://thetestingworldapi.com/api/studentsDetails/10058032 
  path_url=/api/studentsDetails/10058032 
  headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
  body=None 
  </msg>
-<msg time="2024-01-19T09:17:07.976982" level="INFO">GET Response : url=https://thetestingworldapi.com/api/studentsDetails/10058032 
+<msg time="2024-01-19T10:00:23.467597" level="INFO">GET Response : url=https://thetestingworldapi.com/api/studentsDetails/10058032 
  status=200, reason=OK 
- headers={'Cache-Control': 'no-cache', 'Pragma': 'no-cache', 'Content-Type': 'application/json; charset=utf-8', 'Expires': '-1', 'Server': 'Microsoft-IIS/10.0', 'X-AspNet-Version': '4.0.30319', 'X-Powered-By': 'ASP.NET', 'X-Powered-By-Plesk': 'PleskWin', 'Date': 'Fri, 19 Jan 2024 03:47:07 GMT', 'Content-Length': '137'} 
+ headers={'Cache-Control': 'no-cache', 'Pragma': 'no-cache', 'Content-Type': 'application/json; charset=utf-8', 'Expires': '-1', 'Server': 'Microsoft-IIS/10.0', 'X-AspNet-Version': '4.0.30319', 'X-Powered-By': 'ASP.NET', 'X-Powered-By-Plesk': 'PleskWin', 'Date': 'Fri, 19 Jan 2024 04:30:23 GMT', 'Content-Length': '137'} 
  body={"status":"true","data":{"id":10058032,"first_name":"sanem","middle_name":"deneme3 ","last_name":"deneme4","date_of_birth":"11-12-2000"}} 
  </msg>
-<msg time="2024-01-19T09:17:07.976982" level="INFO">c:\python38\lib\site-packages\urllib3\connectionpool.py:1099: InsecureRequestWarning: Unverified HTTPS request is being made to host 'thetestingworldapi.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+<msg time="2024-01-19T10:00:23.468617" level="INFO">c:\python38\lib\site-packages\urllib3\connectionpool.py:1099: InsecureRequestWarning: Unverified HTTPS request is being made to host 'thetestingworldapi.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
   warnings.warn(</msg>
-<msg time="2024-01-19T09:17:07.976982" level="INFO">${Response} = &lt;Response [200]&gt;</msg>
+<msg time="2024-01-19T10:00:23.469614" level="INFO">${Response} = &lt;Response [200]&gt;</msg>
 <var>${Response}</var>
 <arg>Fetch_Data</arg>
 <arg>api/studentsDetails/${StudentID}</arg>
 <doc>Sends a GET request on a previously created HTTP Session.</doc>
-<status status="PASS" start="2024-01-19T09:17:07.838387" elapsed="0.138595"/>
+<status status="PASS" start="2024-01-19T10:00:19.800221" elapsed="3.669393"/>
 </kw>
 <kw name="Log To Console" owner="BuiltIn">
 <arg>${Response.status_code}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2024-01-19T09:17:07.978003" elapsed="0.001997"/>
+<status status="PASS" start="2024-01-19T10:00:23.471613" elapsed="0.003983"/>
 </kw>
 <kw name="Log To Console" owner="BuiltIn">
 <arg>${Response.content}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2024-01-19T09:17:07.980000" elapsed="0.002006"/>
+<status status="PASS" start="2024-01-19T10:00:23.477605" elapsed="0.003002"/>
 </kw>
 <kw name="Convert To String" owner="BuiltIn">
-<msg time="2024-01-19T09:17:07.984997" level="INFO">${actual_code} = 200</msg>
+<msg time="2024-01-19T10:00:23.486019" level="INFO">${actual_code} = 200</msg>
 <var>${actual_code}</var>
 <arg>${Response.status_code}</arg>
 <doc>Converts the given item to a Unicode string.</doc>
-<status status="PASS" start="2024-01-19T09:17:07.982947" elapsed="0.002050"/>
+<status status="PASS" start="2024-01-19T10:00:23.482597" elapsed="0.003422"/>
 </kw>
 <kw name="Should Be Equal" owner="BuiltIn">
 <arg>${actual_code}</arg>
 <arg>200</arg>
 <doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" start="2024-01-19T09:17:07.984997" elapsed="0.001004"/>
+<status status="PASS" start="2024-01-19T10:00:23.487080" elapsed="0.001000"/>
 </kw>
-<status status="PASS" start="2024-01-19T09:17:07.833374" elapsed="0.153578"/>
+<kw name="To Json" owner="RequestsLibrary">
+<msg time="2024-01-19T10:00:23.489079" level="WARN">Keyword 'RequestsLibrary.To Json' is deprecated. Please use ${resp.json()} instead. Have a look at the improved HTML output as pretty printing replacement.</msg>
+<msg time="2024-01-19T10:00:23.493099" level="INFO">To JSON using : content={"status":"true","data":{"id":10058032,"first_name":"sanem","middle_name":"deneme3 ","last_name":"deneme4","date_of_birth":"11-12-2000"}} </msg>
+<msg time="2024-01-19T10:00:23.493099" level="INFO">To JSON using : pretty_print=False </msg>
+<msg time="2024-01-19T10:00:23.493099" level="INFO">${json_res} = {'status': 'true', 'data': {'id': 10058032, 'first_name': 'sanem', 'middle_name': 'deneme3 ', 'last_name': 'deneme4', 'date_of_birth': '11-12-2000'}}</msg>
+<var>${json_res}</var>
+<arg>${Response.content}</arg>
+<doc>*DEPRECATED* Please use ${resp.json()} instead. Have a look at the improved HTML output as pretty printing replacement.</doc>
+<status status="PASS" start="2024-01-19T10:00:23.489079" elapsed="0.004020"/>
+</kw>
+<kw name="Get Value From Json" owner="JSONLibrary">
+<msg time="2024-01-19T10:00:24.015941" level="INFO">@{first_name_list} = [ sanem ]</msg>
+<var>@{first_name_list}</var>
+<arg>${json_res}</arg>
+<arg>data.first_name</arg>
+<doc>Get Value From JSON using JSONPath</doc>
+<status status="PASS" start="2024-01-19T10:00:23.494085" elapsed="0.521856"/>
+</kw>
+<kw name="Get From List" owner="Collections">
+<msg time="2024-01-19T10:00:24.016942" level="INFO">${first_name} = sanem</msg>
+<var>${first_name}</var>
+<arg>${first_name_list}</arg>
+<arg>0</arg>
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<status status="PASS" start="2024-01-19T10:00:24.015941" elapsed="0.001001"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${first_name}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-01-19T10:00:24.017941" elapsed="0.000000"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${first_name}</arg>
+<arg>sanem</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2024-01-19T10:00:24.018926" elapsed="0.000000"/>
+</kw>
+<kw name="Get Value From Json" owner="JSONLibrary">
+<msg time="2024-01-19T10:00:24.094937" level="INFO">@{last_name_list} = [ deneme4 ]</msg>
+<var>@{last_name_list}</var>
+<arg>${json_res}</arg>
+<arg>data.last_name</arg>
+<doc>Get Value From JSON using JSONPath</doc>
+<status status="PASS" start="2024-01-19T10:00:24.019958" elapsed="0.074979"/>
+</kw>
+<kw name="Get From List" owner="Collections">
+<msg time="2024-01-19T10:00:24.096936" level="INFO">${last_name} = deneme4</msg>
+<var>${last_name}</var>
+<arg>${last_name_list}</arg>
+<arg>0</arg>
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<status status="PASS" start="2024-01-19T10:00:24.095941" elapsed="0.000995"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${last_name}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-01-19T10:00:24.096936" elapsed="0.001002"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${last_name}</arg>
+<arg>deneme4</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2024-01-19T10:00:24.097938" elapsed="0.000995"/>
+</kw>
+<status status="PASS" start="2024-01-19T10:00:19.793207" elapsed="4.306734"/>
 </test>
-<status status="PASS" start="2024-01-19T09:17:07.351367" elapsed="0.636584"/>
+<status status="PASS" start="2024-01-19T10:00:15.501482" elapsed="8.599450"/>
 </suite>
 <statistics>
 <total>
@@ -67,5 +131,6 @@
 </suite>
 </statistics>
 <errors>
+<msg time="2024-01-19T10:00:23.489079" level="WARN">Keyword 'RequestsLibrary.To Json' is deprecated. Please use ${resp.json()} instead. Have a look at the improved HTML output as pretty printing replacement.</msg>
 </errors>
 </robot>

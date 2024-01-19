@@ -1,5 +1,7 @@
 *** Settings ***
 Library    RequestsLibrary
+Library    JSONLibrary
+Library    Collections
 *** Variables ***
 ${APP_BASE_URL}        https://thetestingworldapi.com/
 ${StudentID}    10058032
@@ -12,6 +14,17 @@ TC_001_Fetch_Specific_Students_Details_By_Id
     ${actual_code}=    Convert To String    ${Response.status_code}
     Should Be Equal    ${actual_code}    200
 
+    ${json_res}=    To Json    ${Response.content}
+    
+    @{first_name_list}=    Get Value From Json    ${json_res}    data.first_name
+    ${first_name}=    Get From List    ${first_name_list}    0
+    Log To Console    ${first_name}
+    Should Be Equal    ${first_name}    sanem
+    
+    @{last_name_list}    Get Value From Json    ${json_res}    data.last_name
+    ${last_name}=    Get From List    ${last_name_list}    0
+    Log To Console    ${last_name}
+    Should Be Equal    ${last_name}    deneme4
 #$ robot TC_001_Get_Specific_Students_Details.robot
 #==============================================================================
 #TC 001 Get Specific Students Details
