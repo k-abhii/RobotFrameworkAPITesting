@@ -29,3 +29,21 @@ TC_001_Fetch_Specific_Students_Details_By_Id
 #Report:  C:\Users\hp\PycharmProjects\RobotAPIAutomation\report.html
 #c:\python38\lib\site-packages\urllib3\connectionpool.py:1099: InsecureRequestWarning: Unverified HTTPS request is being made to host 'thetestingworldapi.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
 #  warnings.warn(
+
+
+#$ robot TC_001_Get_Specific_Students_Details.robot
+#==============================================================================
+#TC 001 Get Specific Students Details
+#==============================================================================
+#TC_001_Fetch_Specific_Students_Details_By_Id                          200
+#b'{"status":"true","data":{"id":10058032,"first_name":"sanem","middle_name":"deneme3 ","last_name":"deneme4","date_of_birth":"11-12-2000"}}'
+#| PASS |
+#------------------------------------------------------------------------------
+#TC 001 Get Specific Students Details                                  | PASS |
+#1 test, 1 passed, 0 failed
+#==============================================================================
+#Output:  C:\Users\hp\PycharmProjects\RobotAPIAutomation\output.xml
+#Log:     C:\Users\hp\PycharmProjects\RobotAPIAutomation\log.html
+#Report:  C:\Users\hp\PycharmProjects\RobotAPIAutomation\report.html
+#c:\python38\lib\site-packages\urllib3\connectionpool.py:1099: InsecureRequestWarning: Unverified HTTPS request is being made to host 'thetestingworldapi.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+#  warnings.warn(
