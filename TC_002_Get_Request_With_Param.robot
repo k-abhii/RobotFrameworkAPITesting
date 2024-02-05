@@ -19,3 +19,8 @@ TC_002 Validate Get Request With Parameters
     
     ${res_json}=    Convert String To Json    ${response.text}
     Log To Console    ${res_json}
+    @{first_name_list}=    Get Value From Json    ${res_json}    data[0].first_name
+    ${first_name}=    Get From List    ${first_name_list}    0
+    Should Be Equal    ${first_name}    Michael
+    
+    
