@@ -1,124 +1,100 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.0 (Python 3.8.2 on win32)" generated="2024-01-19T10:00:15.495477" rpa="false" schemaversion="5">
-<suite id="s1" name="TC 001 Get Specific Students Details" source="C:\Users\hp\PycharmProjects\RobotAPIAutomation\TC_001_Get_Specific_Students_Details.robot">
-<test id="s1-t1" name="TC_001_Fetch_Specific_Students_Details_By_Id" line="9">
+<robot generator="Robot 7.0 (Python 3.8.2 on win32)" generated="2024-02-05T11:07:49.986884" rpa="false" schemaversion="5">
+<suite id="s1" name="05 02 2024 Get Param" source="C:\Users\hp\PycharmProjects\RobotAPIAutomation\05_02_2024_Get_Param.robot">
+<test id="s1-t1" name="5TH_February_TC_002_Get_Request_Param" line="8">
 <kw name="Create Session" owner="RequestsLibrary">
-<msg time="2024-01-19T10:00:19.798256" level="INFO">Creating Session using : alias=Fetch_Data, url=https://thetestingworldapi.com/, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
-<arg>Fetch_Data</arg>
-<arg>${APP_BASE_URL}</arg>
+<msg time="2024-02-05T11:07:50.812693" level="INFO">Creating Session using : alias=Get_Param, url=https://reqres.in, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<arg>Get_Param</arg>
+<arg>${base_url}</arg>
 <doc>Create Session: create a HTTP session to a server</doc>
-<status status="PASS" start="2024-01-19T10:00:19.797257" elapsed="0.000999"/>
+<status status="PASS" start="2024-02-05T11:07:50.811690" elapsed="0.001003"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2024-02-05T11:07:50.814692" level="INFO">&amp;{param} = { page=2 }</msg>
+<var>&amp;{param}</var>
+<arg>page=2</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2024-02-05T11:07:50.813693" elapsed="0.000999"/>
 </kw>
 <kw name="GET On Session" owner="RequestsLibrary">
-<msg time="2024-01-19T10:00:23.467597" level="INFO">GET Request : url=https://thetestingworldapi.com/api/studentsDetails/10058032 
- path_url=/api/studentsDetails/10058032 
+<msg time="2024-02-05T11:07:51.277206" level="INFO">GET Request : url=https://reqres.in/api/users?page=2 
+ path_url=/api/users?page=2 
  headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
  body=None 
  </msg>
-<msg time="2024-01-19T10:00:23.467597" level="INFO">GET Response : url=https://thetestingworldapi.com/api/studentsDetails/10058032 
+<msg time="2024-02-05T11:07:51.278206" level="INFO">GET Response : url=https://reqres.in/api/users?page=2 
  status=200, reason=OK 
- headers={'Cache-Control': 'no-cache', 'Pragma': 'no-cache', 'Content-Type': 'application/json; charset=utf-8', 'Expires': '-1', 'Server': 'Microsoft-IIS/10.0', 'X-AspNet-Version': '4.0.30319', 'X-Powered-By': 'ASP.NET', 'X-Powered-By-Plesk': 'PleskWin', 'Date': 'Fri, 19 Jan 2024 04:30:23 GMT', 'Content-Length': '137'} 
- body={"status":"true","data":{"id":10058032,"first_name":"sanem","middle_name":"deneme3 ","last_name":"deneme4","date_of_birth":"11-12-2000"}} 
+ headers={'Date': 'Mon, 05 Feb 2024 05:37:51 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Report-To': '{"group":"heroku-nel","max_age":3600,"endpoints":[{"url":"https://nel.heroku.com/reports?ts=1706862586&amp;sid=c4c9725f-1ab0-44d8-820f-430df2718e11&amp;s=CXJFzvvenIR5uCNbmVzEvULsz5R7SkQ%2FXOhgo4kCjfQ%3D"}]}', 'Reporting-Endpoints': 'heroku-nel=https://nel.heroku.com/reports?ts=1706862586&amp;sid=c4c9725f-1ab0-44d8-820f-430df2718e11&amp;s=CXJFzvvenIR5uCNbmVzEvULsz5R7SkQ%2FXOhgo4kCjfQ%3D', 'Nel': '{"report_to":"heroku-nel","max_age":3600,"success_fraction":0.005,"failure_fraction":0.05,"response_headers":["Via"]}', 'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': '*', 'Etag': 'W/"406-ut0vzoCuidvyMf8arZpMpJ6ZRDw"', 'Via': '1.1 vegur', 'Cache-Control': 'max-age=14400', 'CF-Cache-Status': 'HIT', 'Age': '350', 'Vary': 'Accept-Encoding', 'Server': 'cloudflare', 'CF-RAY': '8508cdc819835496-DEL', 'Content-Encoding': 'gzip'} 
+ body={"page":2,"per_page":6,"total":12,"total_pages":2,"data":[{"id":7,"email":"michael.lawson@reqres.in","first_name":"Michael","last_name":"Lawson","avatar":"https://reqres.in/img/faces/7-image.jpg"},{"id":8,"email":"lindsay.ferguson@reqres.in","first_name":"Lindsay","last_name":"Ferguson","avatar":"https://reqres.in/img/faces/8-image.jpg"},{"id":9,"email":"tobias.funke@reqres.in","first_name":"Tobias","last_name":"Funke","avatar":"https://reqres.in/img/faces/9-image.jpg"},{"id":10,"email":"byron.fields@reqres.in","first_name":"Byron","last_name":"Fields","avatar":"https://reqres.in/img/faces/10-image.jpg"},{"id":11,"email":"george.edwards@reqres.in","first_name":"George","last_name":"Edwards","avatar":"https://reqres.in/img/faces/11-image.jpg"},{"id":12,"email":"rachel.howell@reqres.in","first_name":"Rachel","last_name":"Howell","avatar":"https://reqres.in/img/faces/12-image.jpg"}],"support":{"url":"https://reqres.in/#support-heading","text":"To keep ReqRes free, contributions towards server costs are appreciated!"}} 
  </msg>
-<msg time="2024-01-19T10:00:23.468617" level="INFO">c:\python38\lib\site-packages\urllib3\connectionpool.py:1099: InsecureRequestWarning: Unverified HTTPS request is being made to host 'thetestingworldapi.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+<msg time="2024-02-05T11:07:51.279205" level="INFO">c:\python38\lib\site-packages\urllib3\connectionpool.py:1099: InsecureRequestWarning: Unverified HTTPS request is being made to host 'reqres.in'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
   warnings.warn(</msg>
-<msg time="2024-01-19T10:00:23.469614" level="INFO">${Response} = &lt;Response [200]&gt;</msg>
-<var>${Response}</var>
-<arg>Fetch_Data</arg>
-<arg>api/studentsDetails/${StudentID}</arg>
+<msg time="2024-02-05T11:07:51.280203" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<var>${response}</var>
+<arg>Get_Param</arg>
+<arg>/api/users</arg>
+<arg>params=${param}</arg>
 <doc>Sends a GET request on a previously created HTTP Session.</doc>
-<status status="PASS" start="2024-01-19T10:00:19.800221" elapsed="3.669393"/>
+<status status="PASS" start="2024-02-05T11:07:50.814692" elapsed="0.465511"/>
 </kw>
 <kw name="Log To Console" owner="BuiltIn">
-<arg>${Response.status_code}</arg>
+<arg>${response.status_code}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2024-01-19T10:00:23.471613" elapsed="0.003983"/>
+<status status="PASS" start="2024-02-05T11:07:51.281203" elapsed="0.004975"/>
 </kw>
 <kw name="Log To Console" owner="BuiltIn">
-<arg>${Response.content}</arg>
+<arg>${response.content}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2024-01-19T10:00:23.477605" elapsed="0.003002"/>
-</kw>
-<kw name="Convert To String" owner="BuiltIn">
-<msg time="2024-01-19T10:00:23.486019" level="INFO">${actual_code} = 200</msg>
-<var>${actual_code}</var>
-<arg>${Response.status_code}</arg>
-<doc>Converts the given item to a Unicode string.</doc>
-<status status="PASS" start="2024-01-19T10:00:23.482597" elapsed="0.003422"/>
-</kw>
-<kw name="Should Be Equal" owner="BuiltIn">
-<arg>${actual_code}</arg>
-<arg>200</arg>
-<doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" start="2024-01-19T10:00:23.487080" elapsed="0.001000"/>
+<status status="PASS" start="2024-02-05T11:07:51.287176" elapsed="0.005033"/>
 </kw>
 <kw name="To Json" owner="RequestsLibrary">
-<msg time="2024-01-19T10:00:23.489079" level="WARN">Keyword 'RequestsLibrary.To Json' is deprecated. Please use ${resp.json()} instead. Have a look at the improved HTML output as pretty printing replacement.</msg>
-<msg time="2024-01-19T10:00:23.493099" level="INFO">To JSON using : content={"status":"true","data":{"id":10058032,"first_name":"sanem","middle_name":"deneme3 ","last_name":"deneme4","date_of_birth":"11-12-2000"}} </msg>
-<msg time="2024-01-19T10:00:23.493099" level="INFO">To JSON using : pretty_print=False </msg>
-<msg time="2024-01-19T10:00:23.493099" level="INFO">${json_res} = {'status': 'true', 'data': {'id': 10058032, 'first_name': 'sanem', 'middle_name': 'deneme3 ', 'last_name': 'deneme4', 'date_of_birth': '11-12-2000'}}</msg>
+<msg time="2024-02-05T11:07:51.293174" level="WARN">Keyword 'RequestsLibrary.To Json' is deprecated. Please use ${resp.json()} instead. Have a look at the improved HTML output as pretty printing replacement.</msg>
+<msg time="2024-02-05T11:07:51.298203" level="INFO">To JSON using : content={"page":2,"per_page":6,"total":12,"total_pages":2,"data":[{"id":7,"email":"michael.lawson@reqres.in","first_name":"Michael","last_name":"Lawson","avatar":"https://reqres.in/img/faces/7-image.jpg"},{"id":8,"email":"lindsay.ferguson@reqres.in","first_name":"Lindsay","last_name":"Ferguson","avatar":"https://reqres.in/img/faces/8-image.jpg"},{"id":9,"email":"tobias.funke@reqres.in","first_name":"Tobias","last_name":"Funke","avatar":"https://reqres.in/img/faces/9-image.jpg"},{"id":10,"email":"byron.fields@reqres.in","first_name":"Byron","last_name":"Fields","avatar":"https://reqres.in/img/faces/10-image.jpg"},{"id":11,"email":"george.edwards@reqres.in","first_name":"George","last_name":"Edwards","avatar":"https://reqres.in/img/faces/11-image.jpg"},{"id":12,"email":"rachel.howell@reqres.in","first_name":"Rachel","last_name":"Howell","avatar":"https://reqres.in/img/faces/12-image.jpg"}],"support":{"url":"https://reqres.in/#support-heading","text":"To keep ReqRes free, contributions towards server costs are appreciated!"}} </msg>
+<msg time="2024-02-05T11:07:51.298203" level="INFO">To JSON using : pretty_print=False </msg>
+<msg time="2024-02-05T11:07:51.299203" level="INFO">${json_res} = {'page': 2, 'per_page': 6, 'total': 12, 'total_pages': 2, 'data': [{'id': 7, 'email': 'michael.lawson@reqres.in', 'first_name': 'Michael', 'last_name': 'Lawson', 'avatar': 'https://reqres.in/img/faces...</msg>
 <var>${json_res}</var>
-<arg>${Response.content}</arg>
+<arg>${response.content}</arg>
 <doc>*DEPRECATED* Please use ${resp.json()} instead. Have a look at the improved HTML output as pretty printing replacement.</doc>
-<status status="PASS" start="2024-01-19T10:00:23.489079" elapsed="0.004020"/>
+<status status="PASS" start="2024-02-05T11:07:51.293174" elapsed="0.006029"/>
 </kw>
 <kw name="Get Value From Json" owner="JSONLibrary">
-<msg time="2024-01-19T10:00:24.015941" level="INFO">@{first_name_list} = [ sanem ]</msg>
+<msg time="2024-02-05T11:07:51.454180" level="INFO">@{first_name_list} = [ Michael ]</msg>
 <var>@{first_name_list}</var>
 <arg>${json_res}</arg>
-<arg>data.first_name</arg>
+<arg>data[0].first_name</arg>
 <doc>Get Value From JSON using JSONPath</doc>
-<status status="PASS" start="2024-01-19T10:00:23.494085" elapsed="0.521856"/>
+<status status="PASS" start="2024-02-05T11:07:51.301175" elapsed="0.153005"/>
 </kw>
 <kw name="Get From List" owner="Collections">
-<msg time="2024-01-19T10:00:24.016942" level="INFO">${first_name} = sanem</msg>
+<msg time="2024-02-05T11:07:51.456181" level="INFO">${first_name} = Michael</msg>
 <var>${first_name}</var>
 <arg>${first_name_list}</arg>
 <arg>0</arg>
 <doc>Returns the value specified with an ``index`` from ``list``.</doc>
-<status status="PASS" start="2024-01-19T10:00:24.015941" elapsed="0.001001"/>
-</kw>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>${first_name}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2024-01-19T10:00:24.017941" elapsed="0.000000"/>
+<status status="PASS" start="2024-02-05T11:07:51.455181" elapsed="0.001000"/>
 </kw>
 <kw name="Should Be Equal" owner="BuiltIn">
 <arg>${first_name}</arg>
-<arg>sanem</arg>
+<arg>Michael</arg>
 <doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" start="2024-01-19T10:00:24.018926" elapsed="0.000000"/>
+<status status="PASS" start="2024-02-05T11:07:51.457220" elapsed="0.000961"/>
 </kw>
-<kw name="Get Value From Json" owner="JSONLibrary">
-<msg time="2024-01-19T10:00:24.094937" level="INFO">@{last_name_list} = [ deneme4 ]</msg>
-<var>@{last_name_list}</var>
-<arg>${json_res}</arg>
-<arg>data.last_name</arg>
-<doc>Get Value From JSON using JSONPath</doc>
-<status status="PASS" start="2024-01-19T10:00:24.019958" elapsed="0.074979"/>
-</kw>
-<kw name="Get From List" owner="Collections">
-<msg time="2024-01-19T10:00:24.096936" level="INFO">${last_name} = deneme4</msg>
-<var>${last_name}</var>
-<arg>${last_name_list}</arg>
-<arg>0</arg>
-<doc>Returns the value specified with an ``index`` from ``list``.</doc>
-<status status="PASS" start="2024-01-19T10:00:24.095941" elapsed="0.000995"/>
-</kw>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>${last_name}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2024-01-19T10:00:24.096936" elapsed="0.001002"/>
+<kw name="Convert To String" owner="BuiltIn">
+<msg time="2024-02-05T11:07:51.460181" level="INFO">${response_code} = 200</msg>
+<var>${response_code}</var>
+<arg>${response.status_code}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<status status="PASS" start="2024-02-05T11:07:51.458181" elapsed="0.002000"/>
 </kw>
 <kw name="Should Be Equal" owner="BuiltIn">
-<arg>${last_name}</arg>
-<arg>deneme4</arg>
+<arg>${response_code}</arg>
+<arg>200</arg>
 <doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" start="2024-01-19T10:00:24.097938" elapsed="0.000995"/>
+<status status="PASS" start="2024-02-05T11:07:51.460181" elapsed="0.001001"/>
 </kw>
-<status status="PASS" start="2024-01-19T10:00:19.793207" elapsed="4.306734"/>
+<status status="PASS" start="2024-02-05T11:07:50.807690" elapsed="0.654494"/>
 </test>
-<status status="PASS" start="2024-01-19T10:00:15.501482" elapsed="8.599450"/>
+<status status="PASS" start="2024-02-05T11:07:49.992851" elapsed="1.470335"/>
 </suite>
 <statistics>
 <total>
@@ -127,10 +103,10 @@
 <tag>
 </tag>
 <suite>
-<stat pass="1" fail="0" skip="0" id="s1" name="TC 001 Get Specific Students Details">TC 001 Get Specific Students Details</stat>
+<stat pass="1" fail="0" skip="0" id="s1" name="05 02 2024 Get Param">05 02 2024 Get Param</stat>
 </suite>
 </statistics>
 <errors>
-<msg time="2024-01-19T10:00:23.489079" level="WARN">Keyword 'RequestsLibrary.To Json' is deprecated. Please use ${resp.json()} instead. Have a look at the improved HTML output as pretty printing replacement.</msg>
+<msg time="2024-02-05T11:07:51.293174" level="WARN">Keyword 'RequestsLibrary.To Json' is deprecated. Please use ${resp.json()} instead. Have a look at the improved HTML output as pretty printing replacement.</msg>
 </errors>
 </robot>
