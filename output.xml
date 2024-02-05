@@ -1,97 +1,124 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.0 (Python 3.8.2 on win32)" generated="2024-02-05T13:40:46.894261" rpa="false" schemaversion="5">
+<robot generator="Robot 7.0 (Python 3.8.2 on win32)" generated="2024-02-05T13:56:16.835619" rpa="false" schemaversion="5">
 <suite id="s1" name="TC 003 Delete Request" source="C:\Users\hp\PycharmProjects\RobotAPIAutomation\TC_003_Delete_Request.robot">
 <test id="s1-t1" name="TC_003_DELETE_Request" line="8">
 <kw name="Create Session" owner="RequestsLibrary">
-<msg time="2024-02-05T13:40:47.719335" level="INFO">Creating Session using : alias=Delete_Request, url=https://thetestingworldapi.com/, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<msg time="2024-02-05T13:56:17.664460" level="INFO">Creating Session using : alias=Delete_Request, url=https://thetestingworldapi.com/, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
 <arg>Delete_Request</arg>
 <arg>${base_url}</arg>
 <doc>Create Session: create a HTTP session to a server</doc>
-<status status="PASS" start="2024-02-05T13:40:47.718332" elapsed="0.001003"/>
+<status status="PASS" start="2024-02-05T13:56:17.663462" elapsed="0.002001"/>
 </kw>
 <kw name="DELETE On Session" owner="RequestsLibrary">
-<msg time="2024-02-05T13:40:47.819306" level="INFO">DELETE Request : url=https://thetestingworldapi.com/api/studentsDetails/10064018 
- path_url=/api/studentsDetails/10064018 
+<msg time="2024-02-05T13:56:17.764505" level="INFO">DELETE Request : url=https://thetestingworldapi.com/api/studentsDetails/10064106 
+ path_url=/api/studentsDetails/10064106 
  headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '0'} 
  body=None 
  </msg>
-<msg time="2024-02-05T13:40:47.819306" level="INFO">DELETE Response : url=https://thetestingworldapi.com/api/studentsDetails/10064018 
+<msg time="2024-02-05T13:56:17.765458" level="INFO">DELETE Response : url=https://thetestingworldapi.com/api/studentsDetails/10064106 
  status=200, reason=OK 
- headers={'Cache-Control': 'no-cache', 'Pragma': 'no-cache', 'Content-Type': 'application/json; charset=utf-8', 'Expires': '-1', 'Server': 'Microsoft-IIS/10.0', 'X-AspNet-Version': '4.0.30319', 'X-Powered-By': 'ASP.NET', 'X-Powered-By-Plesk': 'PleskWin', 'Date': 'Mon, 05 Feb 2024 08:10:47 GMT', 'Content-Length': '46'} 
+ headers={'Cache-Control': 'no-cache', 'Pragma': 'no-cache', 'Content-Type': 'application/json; charset=utf-8', 'Expires': '-1', 'Server': 'Microsoft-IIS/10.0', 'X-AspNet-Version': '4.0.30319', 'X-Powered-By': 'ASP.NET', 'X-Powered-By-Plesk': 'PleskWin', 'Date': 'Mon, 05 Feb 2024 08:26:16 GMT', 'Content-Length': '46'} 
  body={"status":"true","msg":"Delete  data success"} 
  </msg>
-<msg time="2024-02-05T13:40:47.819306" level="INFO">c:\python38\lib\site-packages\urllib3\connectionpool.py:1099: InsecureRequestWarning: Unverified HTTPS request is being made to host 'thetestingworldapi.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+<msg time="2024-02-05T13:56:17.765458" level="INFO">c:\python38\lib\site-packages\urllib3\connectionpool.py:1099: InsecureRequestWarning: Unverified HTTPS request is being made to host 'thetestingworldapi.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
   warnings.warn(</msg>
-<msg time="2024-02-05T13:40:47.820299" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<msg time="2024-02-05T13:56:17.766463" level="INFO">${response} = &lt;Response [200]&gt;</msg>
 <var>${response}</var>
 <arg>Delete_Request</arg>
-<arg>api/studentsDetails/10064018</arg>
+<arg>api/studentsDetails/10064106</arg>
 <doc>Sends a DELETE request on a previously created HTTP Session.</doc>
-<status status="PASS" start="2024-02-05T13:40:47.720337" elapsed="0.099962"/>
+<status status="PASS" start="2024-02-05T13:56:17.665463" elapsed="0.101000"/>
 </kw>
 <kw name="Log To Console" owner="BuiltIn">
 <arg>${response.status_code}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2024-02-05T13:40:47.820299" elapsed="0.002990"/>
+<status status="PASS" start="2024-02-05T13:56:17.766463" elapsed="0.001995"/>
 </kw>
 <kw name="Convert To String" owner="BuiltIn">
-<msg time="2024-02-05T13:40:47.825295" level="INFO">${code} = 200</msg>
+<msg time="2024-02-05T13:56:17.771477" level="INFO">${code} = 200</msg>
 <var>${code}</var>
 <arg>${response.status_code}</arg>
 <doc>Converts the given item to a Unicode string.</doc>
-<status status="PASS" start="2024-02-05T13:40:47.823289" elapsed="0.002006"/>
+<status status="PASS" start="2024-02-05T13:56:17.769452" elapsed="0.003021"/>
 </kw>
 <kw name="Should Be Equal" owner="BuiltIn">
 <arg>${code}</arg>
 <arg>200</arg>
 <doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" start="2024-02-05T13:40:47.826297" elapsed="0.000000"/>
+<status status="PASS" start="2024-02-05T13:56:17.772473" elapsed="0.001002"/>
 </kw>
 <kw name="Log To Console" owner="BuiltIn">
 <arg>${response.content}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2024-02-05T13:40:47.827295" elapsed="0.001999"/>
+<status status="PASS" start="2024-02-05T13:56:17.773475" elapsed="0.001999"/>
 </kw>
 <kw name="To Json" owner="RequestsLibrary">
-<msg time="2024-02-05T13:40:47.830292" level="WARN">Keyword 'RequestsLibrary.To Json' is deprecated. Please use ${resp.json()} instead. Have a look at the improved HTML output as pretty printing replacement.</msg>
-<msg time="2024-02-05T13:40:47.832300" level="INFO">To JSON using : content={"status":"true","msg":"Delete  data success"} </msg>
-<msg time="2024-02-05T13:40:47.832300" level="INFO">To JSON using : pretty_print=False </msg>
-<msg time="2024-02-05T13:40:47.833300" level="INFO">${json_response} = {'status': 'true', 'msg': 'Delete  data success'}</msg>
+<msg time="2024-02-05T13:56:17.776452" level="WARN">Keyword 'RequestsLibrary.To Json' is deprecated. Please use ${resp.json()} instead. Have a look at the improved HTML output as pretty printing replacement.</msg>
+<msg time="2024-02-05T13:56:17.778448" level="INFO">To JSON using : content={"status":"true","msg":"Delete  data success"} </msg>
+<msg time="2024-02-05T13:56:17.778448" level="INFO">To JSON using : pretty_print=False </msg>
+<msg time="2024-02-05T13:56:17.778448" level="INFO">${json_response} = {'status': 'true', 'msg': 'Delete  data success'}</msg>
 <var>${json_response}</var>
 <arg>${response.content}</arg>
 <doc>*DEPRECATED* Please use ${resp.json()} instead. Have a look at the improved HTML output as pretty printing replacement.</doc>
-<status status="PASS" start="2024-02-05T13:40:47.829294" elapsed="0.004006"/>
+<status status="PASS" start="2024-02-05T13:56:17.776452" elapsed="0.001996"/>
 </kw>
 <kw name="Log To Console" owner="BuiltIn">
 <arg>${json_response}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2024-02-05T13:40:47.833300" elapsed="0.000999"/>
+<status status="PASS" start="2024-02-05T13:56:17.779465" elapsed="0.001005"/>
 </kw>
 <kw name="Get Value From Json" owner="JSONLibrary">
-<msg time="2024-02-05T13:40:47.969330" level="INFO">@{status} = [ true ]</msg>
+<msg time="2024-02-05T13:56:17.911495" level="INFO">@{status} = [ true ]</msg>
 <var>@{status}</var>
 <arg>${json_response}</arg>
 <arg>status</arg>
 <doc>Get Value From JSON using JSONPath</doc>
-<status status="PASS" start="2024-02-05T13:40:47.835285" elapsed="0.134045"/>
+<status status="PASS" start="2024-02-05T13:56:17.781451" elapsed="0.131049"/>
 </kw>
 <kw name="Get From List" owner="Collections">
-<msg time="2024-02-05T13:40:47.970337" level="INFO">${st} = true</msg>
+<msg time="2024-02-05T13:56:17.913497" level="INFO">${st} = true</msg>
 <var>${st}</var>
 <arg>${status}</arg>
 <arg>0</arg>
 <doc>Returns the value specified with an ``index`` from ``list``.</doc>
-<status status="PASS" start="2024-02-05T13:40:47.970337" elapsed="0.000000"/>
+<status status="PASS" start="2024-02-05T13:56:17.912500" elapsed="0.000997"/>
 </kw>
 <kw name="Should Be Equal" owner="BuiltIn">
 <arg>${st}</arg>
 <arg>true</arg>
 <doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" start="2024-02-05T13:40:47.971331" elapsed="0.000000"/>
+<status status="PASS" start="2024-02-05T13:56:17.913497" elapsed="0.001001"/>
 </kw>
-<status status="PASS" start="2024-02-05T13:40:47.714337" elapsed="0.257997"/>
+<kw name="Get Value From Json" owner="JSONLibrary">
+<msg time="2024-02-05T13:56:17.984486" level="INFO">@{msg_list} = [ Delete  data success ]</msg>
+<var>@{msg_list}</var>
+<arg>${json_response}</arg>
+<arg>msg</arg>
+<doc>Get Value From JSON using JSONPath</doc>
+<status status="PASS" start="2024-02-05T13:56:17.914498" elapsed="0.069988"/>
+</kw>
+<kw name="Get From List" owner="Collections">
+<msg time="2024-02-05T13:56:17.986463" level="INFO">${msg} = Delete  data success</msg>
+<var>${msg}</var>
+<arg>${msg_list}</arg>
+<arg>0</arg>
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<status status="PASS" start="2024-02-05T13:56:17.985461" elapsed="0.001002"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${msg}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-02-05T13:56:17.986463" elapsed="0.000997"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${msg}</arg>
+<arg>Delete</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2024-02-05T13:56:17.987460" elapsed="0.000988"/>
+</kw>
+<status status="PASS" start="2024-02-05T13:56:17.659446" elapsed="0.330023"/>
 </test>
-<status status="PASS" start="2024-02-05T13:40:46.900268" elapsed="1.073032"/>
+<status status="PASS" start="2024-02-05T13:56:16.841651" elapsed="1.149798"/>
 </suite>
 <statistics>
 <total>
@@ -104,6 +131,6 @@
 </suite>
 </statistics>
 <errors>
-<msg time="2024-02-05T13:40:47.830292" level="WARN">Keyword 'RequestsLibrary.To Json' is deprecated. Please use ${resp.json()} instead. Have a look at the improved HTML output as pretty printing replacement.</msg>
+<msg time="2024-02-05T13:56:17.776452" level="WARN">Keyword 'RequestsLibrary.To Json' is deprecated. Please use ${resp.json()} instead. Have a look at the improved HTML output as pretty printing replacement.</msg>
 </errors>
 </robot>
