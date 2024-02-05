@@ -24,3 +24,7 @@ TC_002 Validate Get Request With Parameters
     Should Be Equal    ${first_name}    Michael
     
     
+    @{last_name_list}=    Get Value From Json    ${res_json}    data[0].last_name
+    ${last_name}=    Get From List    ${last_name_list}    0
+    Should Be Equal    ${last_name}    Lawson
+    
