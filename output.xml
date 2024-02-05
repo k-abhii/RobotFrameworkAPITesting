@@ -1,76 +1,167 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.0 (Python 3.8.2 on win32)" generated="2024-02-05T15:53:57.220738" rpa="false" schemaversion="5">
-<suite id="s1" name="TC-004 POST Request" source="C:\Users\hp\PycharmProjects\RobotAPIAutomation\TC-004_POST_Request.robot">
-<test id="s1-t1" name="TC_004_ADD_NEW_RESOURCE_POST_REQUEST" line="8">
+<robot generator="Robot 7.0 (Python 3.8.2 on win32)" generated="2024-02-05T16:49:17.359188" rpa="false" schemaversion="5">
+<suite id="s1" name="TC 005 Put Request" source="C:\Users\hp\PycharmProjects\RobotAPIAutomation\TC_005_Put_Request.robot">
+<test id="s1-t1" name="TC_005_UPDATE_RESOURCE_PUT_REQUEST" line="8">
 <kw name="Create Session" owner="RequestsLibrary">
-<msg time="2024-02-05T15:53:58.044737" level="INFO">Creating Session using : alias=ADD_NEW_STUDENT, url=https://thetestingworldapi.com/, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
-<arg>ADD_NEW_STUDENT</arg>
+<msg time="2024-02-05T16:49:18.219213" level="INFO">Creating Session using : alias=Update_Resource, url=https://thetestingworldapi.com/, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<arg>Update_Resource</arg>
 <arg>${base_url}</arg>
 <doc>Create Session: create a HTTP session to a server</doc>
-<status status="PASS" start="2024-02-05T15:53:58.042715" elapsed="0.002022"/>
+<status status="PASS" start="2024-02-05T16:49:18.218207" elapsed="0.001006"/>
 </kw>
 <kw name="Create Dictionary" owner="BuiltIn">
-<msg time="2024-02-05T15:53:58.046733" level="INFO">&amp;{header} = { Content-Type=application/json }</msg>
+<msg time="2024-02-05T16:49:18.221214" level="INFO">&amp;{body} = { id=10064178 | first_name=Abhimanyu | middle_name=Krishna | last_name=Kumar | date_of_birth=16/02/1999 }</msg>
+<var>&amp;{body}</var>
+<arg>id=10064178</arg>
+<arg>first_name=Abhimanyu</arg>
+<arg>middle_name=Krishna</arg>
+<arg>last_name=Kumar</arg>
+<arg>date_of_birth=16/02/1999</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2024-02-05T16:49:18.220211" elapsed="0.001003"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2024-02-05T16:49:18.223210" level="INFO">&amp;{header} = { Content-Type=application/json }</msg>
 <var>&amp;{header}</var>
 <arg>Content-Type=application/json</arg>
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<status status="PASS" start="2024-02-05T15:53:58.045733" elapsed="0.002003"/>
+<status status="PASS" start="2024-02-05T16:49:18.222210" elapsed="0.001000"/>
 </kw>
-<kw name="Create Dictionary" owner="BuiltIn">
-<msg time="2024-02-05T15:53:58.048736" level="INFO">&amp;{body} = { first_name=Abhimanyu | middle_name=Hare | last_name=Kumar | date_of_birth=12/12/2000 }</msg>
-<var>&amp;{body}</var>
-<arg>first_name=Abhimanyu</arg>
-<arg>middle_name=Hare</arg>
-<arg>last_name=Kumar</arg>
-<arg>date_of_birth=12/12/2000</arg>
-<doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<status status="PASS" start="2024-02-05T15:53:58.047736" elapsed="0.001000"/>
-</kw>
-<kw name="Post Request" owner="RequestsLibrary">
-<msg time="2024-02-05T15:53:58.049734" level="WARN">Keyword 'RequestsLibrary.Post Request' is deprecated. Please use `POST On Session` instead.</msg>
-<msg time="2024-02-05T15:53:58.171748" level="INFO">POST Request : url=https://thetestingworldapi.com/api/studentsDetails 
- path_url=/api/studentsDetails 
- headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Content-Length': '103'} 
- body={"first_name": "Abhimanyu", "middle_name": "Hare", "last_name": "Kumar", "date_of_birth": "12/12/2000"} 
+<kw name="Put Request" owner="RequestsLibrary">
+<msg time="2024-02-05T16:49:18.223210" level="WARN">Keyword 'RequestsLibrary.Put Request' is deprecated. Please use `PUT On Session` instead.</msg>
+<msg time="2024-02-05T16:49:18.325219" level="INFO">PUT Request : url=https://thetestingworldapi.com/api/studentsDetails/10064178 
+ path_url=/api/studentsDetails/10064178 
+ headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Content-Length': '124'} 
+ body={"id": "10064178", "first_name": "Abhimanyu", "middle_name": "Krishna", "last_name": "Kumar", "date_of_birth": "16/02/1999"} 
  </msg>
-<msg time="2024-02-05T15:53:58.171748" level="INFO">POST Response : url=https://thetestingworldapi.com/api/studentsDetails 
- status=201, reason=Created 
- headers={'Cache-Control': 'no-cache', 'Pragma': 'no-cache', 'Content-Type': 'application/json; charset=utf-8', 'Expires': '-1', 'Location': 'https://thetestingworldapi.com/api/studentsDetails/10064178', 'Server': 'Microsoft-IIS/10.0', 'X-AspNet-Version': '4.0.30319', 'X-Powered-By': 'ASP.NET', 'X-Powered-By-Plesk': 'PleskWin', 'Date': 'Mon, 05 Feb 2024 10:23:56 GMT', 'Content-Length': '110'} 
- body={"id":10064178,"first_name":"Abhimanyu","middle_name":"Hare","last_name":"Kumar","date_of_birth":"12/12/2000"} 
+<msg time="2024-02-05T16:49:18.325219" level="INFO">PUT Response : url=https://thetestingworldapi.com/api/studentsDetails/10064178 
+ status=200, reason=OK 
+ headers={'Cache-Control': 'no-cache', 'Pragma': 'no-cache', 'Content-Type': 'application/json; charset=utf-8', 'Expires': '-1', 'Server': 'Microsoft-IIS/10.0', 'X-AspNet-Version': '4.0.30319', 'X-Powered-By': 'ASP.NET', 'X-Powered-By-Plesk': 'PleskWin', 'Date': 'Mon, 05 Feb 2024 11:19:17 GMT', 'Content-Length': '46'} 
+ body={"status":"true","msg":"update  data success"} 
  </msg>
-<msg time="2024-02-05T15:53:58.172736" level="INFO">c:\python38\lib\site-packages\urllib3\connectionpool.py:1099: InsecureRequestWarning: Unverified HTTPS request is being made to host 'thetestingworldapi.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+<msg time="2024-02-05T16:49:18.325219" level="INFO">c:\python38\lib\site-packages\urllib3\connectionpool.py:1099: InsecureRequestWarning: Unverified HTTPS request is being made to host 'thetestingworldapi.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
   warnings.warn(</msg>
-<msg time="2024-02-05T15:53:58.172736" level="INFO">${response} = &lt;Response [201]&gt;</msg>
-<var>${response}</var>
-<arg>ADD_NEW_STUDENT</arg>
-<arg>api/studentsDetails</arg>
+<msg time="2024-02-05T16:49:18.326223" level="INFO">${res} = &lt;Response [200]&gt;</msg>
+<var>${res}</var>
+<arg>Update_Resource</arg>
+<arg>api/studentsDetails/10064178</arg>
 <arg>data=${body}</arg>
 <arg>headers=${header}</arg>
-<doc>*DEPRECATED* Please use `POST On Session` instead.</doc>
-<status status="PASS" start="2024-02-05T15:53:58.049734" elapsed="0.123002"/>
+<doc>*DEPRECATED* Please use `PUT On Session` instead.</doc>
+<status status="PASS" start="2024-02-05T16:49:18.223210" elapsed="0.103013"/>
 </kw>
 <kw name="Log To Console" owner="BuiltIn">
-<arg>${response.status_code}</arg>
+<arg>${res.status_code}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2024-02-05T15:53:58.173735" elapsed="0.002007"/>
+<status status="PASS" start="2024-02-05T16:49:18.327215" elapsed="0.002021"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${res.content}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-02-05T16:49:18.329236" elapsed="0.001978"/>
 </kw>
 <kw name="Should Be Equal As Numbers" owner="BuiltIn">
-<msg time="2024-02-05T15:53:58.177716" level="INFO">Argument types are:
+<msg time="2024-02-05T16:49:18.334211" level="INFO">Argument types are:
 &lt;class 'int'&gt;
 &lt;class 'str'&gt;</msg>
-<arg>${response.status_code}</arg>
-<arg>201</arg>
+<arg>${res.status_code}</arg>
+<arg>200</arg>
 <doc>Fails if objects are unequal after converting them to real numbers.</doc>
-<status status="PASS" start="2024-02-05T15:53:58.175742" elapsed="0.001974"/>
+<status status="PASS" start="2024-02-05T16:49:18.332221" elapsed="0.002985"/>
+</kw>
+<kw name="To Json" owner="RequestsLibrary">
+<msg time="2024-02-05T16:49:18.335206" level="WARN">Keyword 'RequestsLibrary.To Json' is deprecated. Please use ${resp.json()} instead. Have a look at the improved HTML output as pretty printing replacement.</msg>
+<msg time="2024-02-05T16:49:18.337206" level="INFO">To JSON using : content={"status":"true","msg":"update  data success"} </msg>
+<msg time="2024-02-05T16:49:18.338231" level="INFO">To JSON using : pretty_print=False </msg>
+<msg time="2024-02-05T16:49:18.338231" level="INFO">${json_response} = {'status': 'true', 'msg': 'update  data success'}</msg>
+<var>${json_response}</var>
+<arg>${res.content}</arg>
+<doc>*DEPRECATED* Please use ${resp.json()} instead. Have a look at the improved HTML output as pretty printing replacement.</doc>
+<status status="PASS" start="2024-02-05T16:49:18.335206" elapsed="0.003025"/>
+</kw>
+<kw name="Get Value From Json" owner="JSONLibrary">
+<msg time="2024-02-05T16:49:18.465213" level="INFO">@{ST} = [ true ]</msg>
+<var>@{ST}</var>
+<arg>${json_response}</arg>
+<arg>status</arg>
+<doc>Get Value From JSON using JSONPath</doc>
+<status status="PASS" start="2024-02-05T16:49:18.339226" elapsed="0.127018"/>
+</kw>
+<kw name="Get From List" owner="Collections">
+<msg time="2024-02-05T16:49:18.467245" level="INFO">${status} = true</msg>
+<var>${status}</var>
+<arg>${ST}</arg>
+<arg>0</arg>
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<status status="PASS" start="2024-02-05T16:49:18.466244" elapsed="0.001001"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${status}</arg>
+<arg>true</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2024-02-05T16:49:18.467245" elapsed="0.001005"/>
+</kw>
+<kw name="Get Request" owner="RequestsLibrary">
+<msg time="2024-02-05T16:49:18.469246" level="WARN">Keyword 'RequestsLibrary.Get Request' is deprecated. Please use `GET On Session` instead.</msg>
+<msg time="2024-02-05T16:49:18.481219" level="INFO">GET Request : url=https://thetestingworldapi.com/api/studentsDetails/10064178 
+ path_url=/api/studentsDetails/10064178 
+ headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg time="2024-02-05T16:49:18.481219" level="INFO">GET Response : url=https://thetestingworldapi.com/api/studentsDetails/10064178 
+ status=200, reason=OK 
+ headers={'Cache-Control': 'no-cache', 'Pragma': 'no-cache', 'Content-Type': 'application/json; charset=utf-8', 'Expires': '-1', 'Server': 'Microsoft-IIS/10.0', 'X-AspNet-Version': '4.0.30319', 'X-Powered-By': 'ASP.NET', 'X-Powered-By-Plesk': 'PleskWin', 'Date': 'Mon, 05 Feb 2024 11:19:18 GMT', 'Content-Length': '138'} 
+ body={"status":"true","data":{"id":10064178,"first_name":"Abhimanyu","middle_name":"Krishna","last_name":"Kumar","date_of_birth":"16/02/1999"}} 
+ </msg>
+<msg time="2024-02-05T16:49:18.482239" level="INFO">c:\python38\lib\site-packages\urllib3\connectionpool.py:1099: InsecureRequestWarning: Unverified HTTPS request is being made to host 'thetestingworldapi.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(</msg>
+<msg time="2024-02-05T16:49:18.482239" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<var>${response}</var>
+<arg>Update_Resource</arg>
+<arg>api/studentsDetails/10064178</arg>
+<doc>*DEPRECATED* Please use `GET On Session` instead.</doc>
+<status status="PASS" start="2024-02-05T16:49:18.469246" elapsed="0.012993"/>
 </kw>
 <kw name="Log To Console" owner="BuiltIn">
 <arg>${response.content}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2024-02-05T15:53:58.178716" elapsed="0.002006"/>
+<status status="PASS" start="2024-02-05T16:49:18.483222" elapsed="0.001986"/>
 </kw>
-<status status="PASS" start="2024-02-05T15:53:58.039716" elapsed="0.141006"/>
+<kw name="To Json" owner="RequestsLibrary">
+<msg time="2024-02-05T16:49:18.486216" level="WARN">Keyword 'RequestsLibrary.To Json' is deprecated. Please use ${resp.json()} instead. Have a look at the improved HTML output as pretty printing replacement.</msg>
+<msg time="2024-02-05T16:49:18.488234" level="INFO">To JSON using : content={"status":"true","data":{"id":10064178,"first_name":"Abhimanyu","middle_name":"Krishna","last_name":"Kumar","date_of_birth":"16/02/1999"}} </msg>
+<msg time="2024-02-05T16:49:18.488234" level="INFO">To JSON using : pretty_print=False </msg>
+<msg time="2024-02-05T16:49:18.489216" level="INFO">${json_res} = {'status': 'true', 'data': {'id': 10064178, 'first_name': 'Abhimanyu', 'middle_name': 'Krishna', 'last_name': 'Kumar', 'date_of_birth': '16/02/1999'}}</msg>
+<var>${json_res}</var>
+<arg>${response.content}</arg>
+<doc>*DEPRECATED* Please use ${resp.json()} instead. Have a look at the improved HTML output as pretty printing replacement.</doc>
+<status status="PASS" start="2024-02-05T16:49:18.486216" elapsed="0.003000"/>
+</kw>
+<kw name="Get Value From Json" owner="JSONLibrary">
+<msg time="2024-02-05T16:49:18.568244" level="INFO">@{middle_name_list} = [ Krishna ]</msg>
+<var>@{middle_name_list}</var>
+<arg>${json_res}</arg>
+<arg>data.middle_name</arg>
+<doc>Get Value From JSON using JSONPath</doc>
+<status status="PASS" start="2024-02-05T16:49:18.489216" elapsed="0.079028"/>
+</kw>
+<kw name="Get From List" owner="Collections">
+<msg time="2024-02-05T16:49:18.570245" level="INFO">${m_n} = Krishna</msg>
+<var>${m_n}</var>
+<arg>${middle_name_list}</arg>
+<arg>0</arg>
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<status status="PASS" start="2024-02-05T16:49:18.569251" elapsed="0.000994"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${m_n}</arg>
+<arg>Krishna</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2024-02-05T16:49:18.570245" elapsed="0.001006"/>
+</kw>
+<status status="PASS" start="2024-02-05T16:49:18.214194" elapsed="0.358018"/>
 </test>
-<status status="PASS" start="2024-02-05T15:53:57.227758" elapsed="0.954965"/>
+<status status="PASS" start="2024-02-05T16:49:17.365169" elapsed="1.209037"/>
 </suite>
 <statistics>
 <total>
@@ -79,10 +170,13 @@
 <tag>
 </tag>
 <suite>
-<stat pass="1" fail="0" skip="0" id="s1" name="TC-004 POST Request">TC-004 POST Request</stat>
+<stat pass="1" fail="0" skip="0" id="s1" name="TC 005 Put Request">TC 005 Put Request</stat>
 </suite>
 </statistics>
 <errors>
-<msg time="2024-02-05T15:53:58.049734" level="WARN">Keyword 'RequestsLibrary.Post Request' is deprecated. Please use `POST On Session` instead.</msg>
+<msg time="2024-02-05T16:49:18.223210" level="WARN">Keyword 'RequestsLibrary.Put Request' is deprecated. Please use `PUT On Session` instead.</msg>
+<msg time="2024-02-05T16:49:18.335206" level="WARN">Keyword 'RequestsLibrary.To Json' is deprecated. Please use ${resp.json()} instead. Have a look at the improved HTML output as pretty printing replacement.</msg>
+<msg time="2024-02-05T16:49:18.469246" level="WARN">Keyword 'RequestsLibrary.Get Request' is deprecated. Please use `GET On Session` instead.</msg>
+<msg time="2024-02-05T16:49:18.486216" level="WARN">Keyword 'RequestsLibrary.To Json' is deprecated. Please use ${resp.json()} instead. Have a look at the improved HTML output as pretty printing replacement.</msg>
 </errors>
 </robot>
