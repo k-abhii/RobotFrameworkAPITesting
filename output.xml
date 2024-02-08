@@ -1,152 +1,85 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.0 (Python 3.8.2 on win32)" generated="2024-02-08T15:19:36.387248" rpa="false" schemaversion="5">
-<suite id="s1" name="TC 008 Validate Status Code Keyword" source="C:\Users\hp\PycharmProjects\RobotAPIAutomation\TC_008_Validate_Status_Code_Keyword.robot">
-<test id="s1-t1" name="TC_008_FETCH_STUDENT_DETAILS_BY_ID" line="7">
-<kw name="Fetch and Validate Get Status Code" owner="UserKeywords">
+<robot generator="Robot 7.0 (Python 3.8.2 on win32)" generated="2024-02-08T16:25:09.193687" rpa="false" schemaversion="5">
+<suite id="s1" name="TC 009 POST READ JSON" source="C:\Users\hp\PycharmProjects\RobotAPIAutomation\TC_009_POST_READ_JSON.robot">
+<test id="s1-t1" name="TC_009_Create_New-Resources" line="9">
 <kw name="Create Session" owner="RequestsLibrary">
-<msg time="2024-02-08T15:19:37.223118" level="INFO">Creating Session using : alias=SName, url=https://thetestingworldapi.com/, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
-<arg>SName</arg>
+<msg time="2024-02-08T16:25:10.041235" level="INFO">Creating Session using : alias=AddData, url=https://thetestingworldapi.com/, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<arg>AddData</arg>
 <arg>${base_url}</arg>
 <doc>Create Session: create a HTTP session to a server</doc>
-<status status="PASS" start="2024-02-08T15:19:37.222117" elapsed="0.001001"/>
+<status status="PASS" start="2024-02-08T16:25:10.040220" elapsed="0.002009"/>
 </kw>
-<kw name="Get Request" owner="RequestsLibrary">
-<msg time="2024-02-08T15:19:37.224127" level="WARN">Keyword 'RequestsLibrary.Get Request' is deprecated. Please use `GET On Session` instead.</msg>
-<msg time="2024-02-08T15:19:38.104356" level="INFO">GET Request : url=https://thetestingworldapi.com/api/studentsDetails/10065158 
- path_url=/api/studentsDetails/10065158 
- headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
- body=None 
- </msg>
-<msg time="2024-02-08T15:19:38.105353" level="INFO">GET Response : url=https://thetestingworldapi.com/api/studentsDetails/10065158 
- status=200, reason=OK 
- headers={'Cache-Control': 'no-cache', 'Pragma': 'no-cache', 'Content-Type': 'application/json; charset=utf-8', 'Expires': '-1', 'Server': 'Microsoft-IIS/10.0', 'X-AspNet-Version': '4.0.30319', 'X-Powered-By': 'ASP.NET', 'X-Powered-By-Plesk': 'PleskWin', 'Date': 'Thu, 08 Feb 2024 09:49:37 GMT', 'Content-Length': '40'} 
- body={"status":"false","msg":"No data Found"} 
- </msg>
-<msg time="2024-02-08T15:19:38.105353" level="INFO">c:\python38\lib\site-packages\urllib3\connectionpool.py:1099: InsecureRequestWarning: Unverified HTTPS request is being made to host 'thetestingworldapi.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
-  warnings.warn(</msg>
-<msg time="2024-02-08T15:19:38.107301" level="INFO">${response} = &lt;Response [200]&gt;</msg>
-<var>${response}</var>
-<arg>SName</arg>
-<arg>api/studentsDetails/${studentsId}</arg>
-<doc>*DEPRECATED* Please use `GET On Session` instead.</doc>
-<status status="PASS" start="2024-02-08T15:19:37.224127" elapsed="0.883174"/>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2024-02-08T16:25:10.044229" level="INFO">${header} = {'Content-Type': 'application/json'}</msg>
+<var>${header}</var>
+<arg>Content-Type=application/json</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2024-02-08T16:25:10.043233" elapsed="0.000996"/>
 </kw>
-<kw name="Convert To String" owner="BuiltIn">
-<msg time="2024-02-08T15:19:38.113351" level="INFO">${statusC} = 200</msg>
-<var>${statusC}</var>
-<arg>${response.status_code}</arg>
-<doc>Converts the given item to a Unicode string.</doc>
-<status status="PASS" start="2024-02-08T15:19:38.109355" elapsed="0.004997"/>
-</kw>
-<kw name="Should Be Equal" owner="BuiltIn">
-<arg>${statusC}</arg>
-<arg>${expectedStatusCode}</arg>
-<doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" start="2024-02-08T15:19:38.115350" elapsed="0.002003"/>
-</kw>
-<arg>10065158</arg>
-<arg>200</arg>
-<status status="PASS" start="2024-02-08T15:19:37.219085" elapsed="0.899269"/>
-</kw>
-<kw name="Fetch and return Get Responnse" owner="UserKeywords">
-<kw name="Create Session" owner="RequestsLibrary">
-<msg time="2024-02-08T15:19:38.124293" level="INFO">Creating Session using : alias=SName, url=https://thetestingworldapi.com/, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
-<arg>SName</arg>
-<arg>${base_url}</arg>
-<doc>Create Session: create a HTTP session to a server</doc>
-<status status="PASS" start="2024-02-08T15:19:38.122351" elapsed="0.002945"/>
-</kw>
-<kw name="Get Request" owner="RequestsLibrary">
-<msg time="2024-02-08T15:19:38.127301" level="WARN">Keyword 'RequestsLibrary.Get Request' is deprecated. Please use `GET On Session` instead.</msg>
-<msg time="2024-02-08T15:19:38.216281" level="INFO">GET Request : url=https://thetestingworldapi.com/api/studentsDetails/10065158 
- path_url=/api/studentsDetails/10065158 
- headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
- body=None 
- </msg>
-<msg time="2024-02-08T15:19:38.216281" level="INFO">GET Response : url=https://thetestingworldapi.com/api/studentsDetails/10065158 
- status=200, reason=OK 
- headers={'Cache-Control': 'no-cache', 'Pragma': 'no-cache', 'Content-Type': 'application/json; charset=utf-8', 'Expires': '-1', 'Server': 'Microsoft-IIS/10.0', 'X-AspNet-Version': '4.0.30319', 'X-Powered-By': 'ASP.NET', 'X-Powered-By-Plesk': 'PleskWin', 'Date': 'Thu, 08 Feb 2024 09:49:37 GMT', 'Content-Length': '40'} 
- body={"status":"false","msg":"No data Found"} 
- </msg>
-<msg time="2024-02-08T15:19:38.216281" level="INFO">c:\python38\lib\site-packages\urllib3\connectionpool.py:1099: InsecureRequestWarning: Unverified HTTPS request is being made to host 'thetestingworldapi.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
-  warnings.warn(</msg>
-<msg time="2024-02-08T15:19:38.217291" level="INFO">${response} = &lt;Response [200]&gt;</msg>
-<var>${response}</var>
-<arg>SName</arg>
-<arg>api/studentsDetails/${studentsId}</arg>
-<doc>*DEPRECATED* Please use `GET On Session` instead.</doc>
-<status status="PASS" start="2024-02-08T15:19:38.127301" elapsed="0.089990"/>
+<kw name="Fetch Request Content" owner="UserKeywords">
+<kw name="Read Request Jsoncontent" owner="ReadJsonContent">
+<msg time="2024-02-08T16:25:10.047229" level="INFO">${json_body} = {'first_name': 'Testing', 'middle_name': 'K', 'last_name': 'World', 'date_of_birth': '12/12/1998'}</msg>
+<var>${json_body}</var>
+<status status="PASS" start="2024-02-08T16:25:10.046228" elapsed="0.001001"/>
 </kw>
 <return>
-<value>${response}</value>
-<status status="PASS" start="2024-02-08T15:19:38.217291" elapsed="0.000000"/>
+<value>${json_body}</value>
+<status status="PASS" start="2024-02-08T16:25:10.047229" elapsed="0.000000"/>
 </return>
-<msg time="2024-02-08T15:19:38.218320" level="INFO">${response} = &lt;Response [200]&gt;</msg>
-<var>${response}</var>
-<arg>10065158</arg>
-<status status="PASS" start="2024-02-08T15:19:38.120353" elapsed="0.097967"/>
+<msg time="2024-02-08T16:25:10.048233" level="INFO">${jsoncontent} = {'first_name': 'Testing', 'middle_name': 'K', 'last_name': 'World', 'date_of_birth': '12/12/1998'}</msg>
+<var>${jsoncontent}</var>
+<status status="PASS" start="2024-02-08T16:25:10.045233" elapsed="0.003000"/>
 </kw>
 <kw name="Log To Console" owner="BuiltIn">
-<arg>${response.status_code}</arg>
+<arg>${jsoncontent}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2024-02-08T15:19:38.219311" elapsed="0.000995"/>
+<status status="PASS" start="2024-02-08T16:25:10.048233" elapsed="0.000995"/>
+</kw>
+<kw name="Post Request" owner="RequestsLibrary">
+<msg time="2024-02-08T16:25:10.050180" level="WARN">Keyword 'RequestsLibrary.Post Request' is deprecated. Please use `POST On Session` instead.</msg>
+<msg time="2024-02-08T16:25:10.865942" level="INFO">POST Request : url=https://thetestingworldapi.com/api/studentsDetails 
+ path_url=/api/studentsDetails 
+ headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Content-Length': '98'} 
+ body={"first_name": "Testing", "middle_name": "K", "last_name": "World", "date_of_birth": "12/12/1998"} 
+ </msg>
+<msg time="2024-02-08T16:25:10.865942" level="INFO">POST Response : url=https://thetestingworldapi.com/api/studentsDetails 
+ status=201, reason=Created 
+ headers={'Cache-Control': 'no-cache', 'Pragma': 'no-cache', 'Content-Type': 'application/json; charset=utf-8', 'Expires': '-1', 'Location': 'https://thetestingworldapi.com/api/studentsDetails/10065206', 'Server': 'Microsoft-IIS/10.0', 'X-AspNet-Version': '4.0.30319', 'X-Powered-By': 'ASP.NET', 'X-Powered-By-Plesk': 'PleskWin', 'Date': 'Thu, 08 Feb 2024 10:55:10 GMT', 'Content-Length': '105'} 
+ body={"id":10065206,"first_name":"Testing","middle_name":"K","last_name":"World","date_of_birth":"12/12/1998"} 
+ </msg>
+<msg time="2024-02-08T16:25:10.866941" level="INFO">c:\python38\lib\site-packages\urllib3\connectionpool.py:1099: InsecureRequestWarning: Unverified HTTPS request is being made to host 'thetestingworldapi.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(</msg>
+<msg time="2024-02-08T16:25:10.867940" level="INFO">${response} = &lt;Response [201]&gt;</msg>
+<var>${response}</var>
+<arg>AddData</arg>
+<arg>api/studentsDetails</arg>
+<arg>headers=${header}</arg>
+<arg>data=${jsoncontent}</arg>
+<doc>*DEPRECATED* Please use `POST On Session` instead.</doc>
+<status status="PASS" start="2024-02-08T16:25:10.050180" elapsed="0.817760"/>
 </kw>
 <kw name="Log To Console" owner="BuiltIn">
 <arg>${response.content}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2024-02-08T15:19:38.221293" elapsed="0.002015"/>
-</kw>
-<kw name="Fetch and return Get Responnse" owner="UserKeywords">
-<kw name="Create Session" owner="RequestsLibrary">
-<msg time="2024-02-08T15:19:38.226309" level="INFO">Creating Session using : alias=SName, url=https://thetestingworldapi.com/, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
-<arg>SName</arg>
-<arg>${base_url}</arg>
-<doc>Create Session: create a HTTP session to a server</doc>
-<status status="PASS" start="2024-02-08T15:19:38.225318" elapsed="0.000991"/>
-</kw>
-<kw name="Get Request" owner="RequestsLibrary">
-<msg time="2024-02-08T15:19:38.227309" level="WARN">Keyword 'RequestsLibrary.Get Request' is deprecated. Please use `GET On Session` instead.</msg>
-<msg time="2024-02-08T15:19:38.302309" level="INFO">GET Request : url=https://thetestingworldapi.com/api/studentsDetails/10065153 
- path_url=/api/studentsDetails/10065153 
- headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
- body=None 
- </msg>
-<msg time="2024-02-08T15:19:38.302309" level="INFO">GET Response : url=https://thetestingworldapi.com/api/studentsDetails/10065153 
- status=200, reason=OK 
- headers={'Cache-Control': 'no-cache', 'Pragma': 'no-cache', 'Content-Type': 'application/json; charset=utf-8', 'Expires': '-1', 'Server': 'Microsoft-IIS/10.0', 'X-AspNet-Version': '4.0.30319', 'X-Powered-By': 'ASP.NET', 'X-Powered-By-Plesk': 'PleskWin', 'Date': 'Thu, 08 Feb 2024 09:49:37 GMT', 'Content-Length': '128'} 
- body={"status":"true","data":{"id":10065153,"first_name":"Hello","middle_name":"A","last_name":"Kumar","date_of_birth":"12/12/1997"}} 
- </msg>
-<msg time="2024-02-08T15:19:38.303308" level="INFO">c:\python38\lib\site-packages\urllib3\connectionpool.py:1099: InsecureRequestWarning: Unverified HTTPS request is being made to host 'thetestingworldapi.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
-  warnings.warn(</msg>
-<msg time="2024-02-08T15:19:38.303308" level="INFO">${response} = &lt;Response [200]&gt;</msg>
-<var>${response}</var>
-<arg>SName</arg>
-<arg>api/studentsDetails/${studentsId}</arg>
-<doc>*DEPRECATED* Please use `GET On Session` instead.</doc>
-<status status="PASS" start="2024-02-08T15:19:38.227309" elapsed="0.075999"/>
-</kw>
-<return>
-<value>${response}</value>
-<status status="PASS" start="2024-02-08T15:19:38.304299" elapsed="0.000000"/>
-</return>
-<msg time="2024-02-08T15:19:38.304299" level="INFO">${response1} = &lt;Response [200]&gt;</msg>
-<var>${response1}</var>
-<arg>10065153</arg>
-<status status="PASS" start="2024-02-08T15:19:38.224283" elapsed="0.081039"/>
+<status status="PASS" start="2024-02-08T16:25:10.868918" elapsed="0.005000"/>
 </kw>
 <kw name="Log To Console" owner="BuiltIn">
-<arg>${response1.status_code}</arg>
+<arg>${response.status_code}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2024-02-08T15:19:38.305322" elapsed="0.002965"/>
+<status status="PASS" start="2024-02-08T16:25:10.874926" elapsed="0.004994"/>
 </kw>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>${response1.content}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2024-02-08T15:19:38.308287" elapsed="0.002998"/>
+<kw name="Should Be Equal As Numbers" owner="BuiltIn">
+<msg time="2024-02-08T16:25:10.885475" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${response.status_code}</arg>
+<arg>201</arg>
+<doc>Fails if objects are unequal after converting them to real numbers.</doc>
+<status status="PASS" start="2024-02-08T16:25:10.880921" elapsed="0.004554"/>
 </kw>
-<status status="PASS" start="2024-02-08T15:19:37.217076" elapsed="1.094209"/>
+<status status="PASS" start="2024-02-08T16:25:10.036230" elapsed="0.850288"/>
 </test>
-<status status="PASS" start="2024-02-08T15:19:36.393232" elapsed="1.920050"/>
+<status status="PASS" start="2024-02-08T16:25:09.199680" elapsed="1.687836"/>
 </suite>
 <statistics>
 <total>
@@ -155,13 +88,12 @@
 <tag>
 </tag>
 <suite>
-<stat pass="1" fail="0" skip="0" id="s1" name="TC 008 Validate Status Code Keyword">TC 008 Validate Status Code Keyword</stat>
+<stat pass="1" fail="0" skip="0" id="s1" name="TC 009 POST READ JSON">TC 009 POST READ JSON</stat>
 </suite>
 </statistics>
 <errors>
-<msg time="2024-02-08T15:19:37.209119" level="WARN">Error in file 'C:\Users\hp\PycharmProjects\RobotAPIAutomation\Resources\UserKeywords.robot' on line 18: The '[Return]' setting is deprecated. Use the 'RETURN' statement instead.</msg>
-<msg time="2024-02-08T15:19:37.224127" level="WARN">Keyword 'RequestsLibrary.Get Request' is deprecated. Please use `GET On Session` instead.</msg>
-<msg time="2024-02-08T15:19:38.127301" level="WARN">Keyword 'RequestsLibrary.Get Request' is deprecated. Please use `GET On Session` instead.</msg>
-<msg time="2024-02-08T15:19:38.227309" level="WARN">Keyword 'RequestsLibrary.Get Request' is deprecated. Please use `GET On Session` instead.</msg>
+<msg time="2024-02-08T16:25:10.022232" level="WARN">Error in file 'C:\Users\hp\PycharmProjects\RobotAPIAutomation\Resources\UserKeywords.robot' on line 19: The '[Return]' setting is deprecated. Use the 'RETURN' statement instead.</msg>
+<msg time="2024-02-08T16:25:10.024236" level="WARN">Error in file 'C:\Users\hp\PycharmProjects\RobotAPIAutomation\Resources\UserKeywords.robot' on line 22: The '[Return]' setting is deprecated. Use the 'RETURN' statement instead.</msg>
+<msg time="2024-02-08T16:25:10.050180" level="WARN">Keyword 'RequestsLibrary.Post Request' is deprecated. Please use `POST On Session` instead.</msg>
 </errors>
 </robot>
