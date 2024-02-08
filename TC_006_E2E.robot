@@ -35,15 +35,63 @@ TC_006_End_To_End_Test_Case
     ${get_json}=    To Json  ${get_response.content}  
     @{name_list}=  Get Value From Json    ${get_json}  data.first_name
     ${first_name}=  Get From List    ${name_list}  0
-    Should Be Equal    ${first_name}    Abhimanyu
+    Should Be Equal    ${first_name}    ${update_first_name}
 
     @{m_name_list}=  Get Value From Json    ${get_json}  data.middle_name
     ${middle_name}=  Get From List    ${m_name_list}  0
     Should Be Equal    ${middle_name}    Gauranga
 
-     @{l_name_list}=  Get Value From Json    ${get_json}  data.last_name
+    @{l_name_list}=  Get Value From Json    ${get_json}  data.last_name
     ${last_name}=  Get From List    ${l_name_list}  0
     Should Be Equal    ${last_name}    Kumar
+    
+    ${delete_response}=   Delete Request     E2E    api/studentsDetails/${id}
+    Log To Console    ${delete_response.status_code}
+    Log To Console    ${delete_response.content}
+    ${json_delete}=    To Json  ${delete_response.content}  
+    @{Message}=  Get Value From Json    ${json_delete}     status
+    ${statusM}=    Get From List    ${Message}  0
+    Should Be Equal    ${statusM}    true
+
+
+
+
+#$ robot TC_006_E2E.robot
+#==============================================================================
+#TC 006 E2E
+#==============================================================================
+#TC_006_End_To_End_Test_Case                                           [ WARN ] Keyword 'RequestsLibrary.Post Request' is deprecated. Please use `POST On Session` instead.
+#201
+#b'{"id":10065138,"first_name":"Hello","middle_name":"Hare_Krishna","last_name":"Kumar","date_of_birth":"12/12/1997"}'
+#c:\python38\lib\site-packages\urllib3\connectionpool.py:1099: InsecureRequestWarning: Unverified HTTPS request is being made to host 'thetestingworldapi.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+#  warnings.warn(
+#[ WARN ] Keyword 'RequestsLibrary.To Json' is deprecated. Please use ${resp.json()} instead. Have a look at the improved HTML output as pretty printing replacement.
+#10065138
+#[ WARN ] Keyword 'RequestsLibrary.Put Request' is deprecated. Please use `PUT On Session` instead.
+#200
+#b'{"status":"true","msg":"update  data success"}'
+#c:\python38\lib\site-packages\urllib3\connectionpool.py:1099: InsecureRequestWarning: Unverified HTTPS request is being made to host 'thetestingworldapi.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+#  warnings.warn(
+#[ WARN ] Keyword 'RequestsLibrary.To Json' is deprecated. Please use ${resp.json()} instead. Have a look at the improved HTML output as pretty printing replacement.
+#[ WARN ] Keyword 'RequestsLibrary.Get Request' is deprecated. Please use `GET On Session` instead.
+#b'{"status":"true","data":{"id":10065138,"first_name":"Abhimanyu","middle_name":"Gauranga","last_name":"Kumar","date_of_birth":"16/02/1997"}}'
+#c:\python38\lib\site-packages\urllib3\connectionpool.py:1099: InsecureRequestWarning: Unverified HTTPS request is being made to host 'thetestingworldapi.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+#  warnings.warn(
+#[ WARN ] Keyword 'RequestsLibrary.To Json' is deprecated. Please use ${resp.json()} instead. Have a look at the improved HTML output as pretty printing replacement.
+#[ WARN ] Keyword 'RequestsLibrary.Delete Request' is deprecated. Please use `DELETE On Session` instead.
+#200
+#b'{"status":"true","msg":"Delete  data success"}'
+#c:\python38\lib\site-packages\urllib3\connectionpool.py:1099: InsecureRequestWarning: Unverified HTTPS request is being made to host 'thetestingworldapi.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+#  warnings.warn(
+#[ WARN ] Keyword 'RequestsLibrary.To Json' is deprecated. Please use ${resp.json()} instead. Have a look at the improved HTML output as pretty printing replacement.
+#| PASS |
+#------------------------------------------------------------------------------
+#TC 006 E2E                                                            | PASS |
+#1 test, 1 passed, 0 failed
+#==============================================================================
+#Output:  C:\Users\hp\PycharmProjects\RobotAPIAutomation\output.xml
+#Log:     C:\Users\hp\PycharmProjects\RobotAPIAutomation\log.html
+#Report:  C:\Users\hp\PycharmProjects\RobotAPIAutomation\report.html
 
 
 
