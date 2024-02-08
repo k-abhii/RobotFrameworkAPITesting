@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.0 (Python 3.8.2 on win32)" generated="2024-02-08T16:43:18.579654" rpa="false" schemaversion="5">
+<suite id="s1" name="TC 009 POST READ JSON" source="C:\Users\hp\PycharmProjects\RobotAPIAutomation\TC_009_POST_READ_JSON.robot">
+<test id="s1-t1" name="TC_009_Create_New-Resources" line="9">
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2024-02-08T16:43:19.487344" level="INFO">Creating Session using : alias=AddData, url=https://thetestingworldapi.com/, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<arg>AddData</arg>
+<arg>${base_url}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2024-02-08T16:43:19.486354" elapsed="0.002004"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2024-02-08T16:43:19.489355" level="INFO">${header} = {'Content-Type': 'application/json'}</msg>
+<var>${header}</var>
+<arg>Content-Type=application/json</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2024-02-08T16:43:19.488358" elapsed="0.000997"/>
+</kw>
+<kw name="Fetch Request Content" owner="UserKeywords">
+<kw name="Read Request Jsoncontent" owner="ReadJsonContent">
+<msg time="2024-02-08T16:43:19.493340" level="INFO">${json_body} = {'first_name': 'Abhimanyu', 'middle_name': 'Gauranga', 'last_name': 'Kumar', 'date_of_birth': '12/12/1998'}</msg>
+<var>${json_body}</var>
+<status status="PASS" start="2024-02-08T16:43:19.491364" elapsed="0.001976"/>
+</kw>
+<return>
+<value>${json_body}</value>
+<status status="PASS" start="2024-02-08T16:43:19.493340" elapsed="0.000000"/>
+</return>
+<msg time="2024-02-08T16:43:19.494354" level="INFO">${jsoncontent} = {'first_name': 'Abhimanyu', 'middle_name': 'Gauranga', 'last_name': 'Kumar', 'date_of_birth': '12/12/1998'}</msg>
+<var>${jsoncontent}</var>
+<status status="PASS" start="2024-02-08T16:43:19.490354" elapsed="0.004000"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${jsoncontent}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-02-08T16:43:19.494354" elapsed="0.001000"/>
+</kw>
+<kw name="Post Request" owner="RequestsLibrary">
+<msg time="2024-02-08T16:43:19.495354" level="WARN">Keyword 'RequestsLibrary.Post Request' is deprecated. Please use `POST On Session` instead.</msg>
+<msg time="2024-02-08T16:43:20.528658" level="INFO">POST Request : url=https://thetestingworldapi.com/api/studentsDetails 
+ path_url=/api/studentsDetails 
+ headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Content-Length': '107'} 
+ body={"first_name": "Abhimanyu", "middle_name": "Gauranga", "last_name": "Kumar", "date_of_birth": "12/12/1998"} 
+ </msg>
+<msg time="2024-02-08T16:43:20.528658" level="INFO">POST Response : url=https://thetestingworldapi.com/api/studentsDetails 
+ status=201, reason=Created 
+ headers={'Cache-Control': 'no-cache', 'Pragma': 'no-cache', 'Content-Type': 'application/json; charset=utf-8', 'Expires': '-1', 'Location': 'https://thetestingworldapi.com/api/studentsDetails/10065210', 'Server': 'Microsoft-IIS/10.0', 'X-AspNet-Version': '4.0.30319', 'X-Powered-By': 'ASP.NET', 'X-Powered-By-Plesk': 'PleskWin', 'Date': 'Thu, 08 Feb 2024 11:13:20 GMT', 'Content-Length': '114'} 
+ body={"id":10065210,"first_name":"Abhimanyu","middle_name":"Gauranga","last_name":"Kumar","date_of_birth":"12/12/1998"} 
+ </msg>
+<msg time="2024-02-08T16:43:20.529655" level="INFO">c:\python38\lib\site-packages\urllib3\connectionpool.py:1099: InsecureRequestWarning: Unverified HTTPS request is being made to host 'thetestingworldapi.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(</msg>
+<msg time="2024-02-08T16:43:20.530657" level="INFO">${response} = &lt;Response [201]&gt;</msg>
+<var>${response}</var>
+<arg>AddData</arg>
+<arg>api/studentsDetails</arg>
+<arg>headers=${header}</arg>
+<arg>data=${jsoncontent}</arg>
+<doc>*DEPRECATED* Please use `POST On Session` instead.</doc>
+<status status="PASS" start="2024-02-08T16:43:19.495354" elapsed="1.035303"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${response.content}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-02-08T16:43:20.533710" elapsed="0.003973"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${response.status_code}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-02-08T16:43:20.538660" elapsed="0.004023"/>
+</kw>
+<kw name="Should Be Equal As Numbers" owner="BuiltIn">
+<msg time="2024-02-08T16:43:20.548661" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${response.status_code}</arg>
+<arg>201</arg>
+<doc>Fails if objects are unequal after converting them to real numbers.</doc>
+<status status="PASS" start="2024-02-08T16:43:20.544664" elapsed="0.003997"/>
+</kw>
+<status status="PASS" start="2024-02-08T16:43:19.482354" elapsed="1.067304"/>
+</test>
+<status status="PASS" start="2024-02-08T16:43:18.585679" elapsed="1.967976"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="TC 009 POST READ JSON">TC 009 POST READ JSON</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2024-02-08T16:43:19.468354" level="WARN">Error in file 'C:\Users\hp\PycharmProjects\RobotAPIAutomation\Resources\UserKeywords.robot' on line 19: The '[Return]' setting is deprecated. Use the 'RETURN' statement instead.</msg>
+<msg time="2024-02-08T16:43:19.469354" level="WARN">Error in file 'C:\Users\hp\PycharmProjects\RobotAPIAutomation\Resources\UserKeywords.robot' on line 22: The '[Return]' setting is deprecated. Use the 'RETURN' statement instead.</msg>
+<msg time="2024-02-08T16:43:19.495354" level="WARN">Keyword 'RequestsLibrary.Post Request' is deprecated. Please use `POST On Session` instead.</msg>
+</errors>
+</robot>
